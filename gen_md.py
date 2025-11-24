@@ -7,7 +7,7 @@ from slugify import slugify
 # --- CONFIG ---
 INPUT_DIR = "begrippenkaders"
 OUTPUT_DIR = "docs"
-NEWLINE = '{::nomarkdown}<hr style="visibility:hidden;height:0;margin:1em 0 0 0"/>{:/}' # voor gebruik in tabellen
+BASE_URL = "/begrippen/"
 
 # Namespaces
 PROV = Namespace("http://www.w3.org/ns/prov#")
@@ -244,9 +244,7 @@ def get_internal_links(g, subject, predicate, concept_map):
         uri = str(obj)
         if uri in concept_map:
             lbl = concept_map[uri]['label']
-            # We gebruiken dubbele accolades {{ }} in de f-string om enkele { } te krijgen in de output
-            # Output in Markdown wordt: [Fiets]({{ '/fiets/' | relative_url }})
-            links.append(f"[{lbl}]({{{{ '{concept_map[uri]['permalink']}' | relative_url }}}})")
+            links.append(f'<a href="{BASE_URL}{concept_map[uri]['permalink']}">{lbl}</a>')
     return links
 
 from rdflib import URIRef, Literal
@@ -275,7 +273,7 @@ def get_external_links(g, subject, predicate):
         # Het object is een placeholder, de echte link staat in foaf:page
         if page:
             link_text = str(label) if label else "Link"
-            items.append(f"[{link_text}]({str(page)})")
+            items.append(f'<a href="{str(page)}">{link_text}</a>')
         
         # SCENARIO B: Het is een directe link (zoals skos:exactMatch naar Wikidata)
         elif isinstance(obj, URIRef):
@@ -283,11 +281,11 @@ def get_external_links(g, subject, predicate):
             
             if label:
                 # We hebben de URI, én toevallig ook een label in onze graaf
-                items.append(f"[{str(label)}]({url})")
+                items.append(f'<a href="{url}">{str(label)}</a>')
             else:
                 # Alleen de kale URL. 
                 # Tip: Je kunt hier kiezen om de hele URL te tonen, of 'Externe link'
-                items.append(f"[{url}]({url})")
+                items.append(f'<a href="{url}">{url}</a>')
         
         # SCENARIO C: Het is gewoon tekst (Literal)
         else:
