@@ -3,7 +3,7 @@ title: NBility
 parent: Redacteurs
 ---
 
-{{: .note }}
+{: .note }
 Kijk gerust rond! Aan deze website wordt momenteel nog gewerkt.
 
 # NBility

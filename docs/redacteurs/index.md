@@ -3,7 +3,7 @@ title: Redacteurs
 nav_order: 99
 ---
 
-{{: .note }}
+{: .note }
 Kijk gerust rond! Aan deze website wordt momenteel nog gewerkt.
 
 # Redacteurs

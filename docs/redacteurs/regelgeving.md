@@ -3,7 +3,7 @@ title: Wet- en regelgeving
 parent: Redacteurs
 ---
 
-{{: .note }}
+{: .note }
 Kijk gerust rond! Aan deze website wordt momenteel nog gewerkt.
 
 # Wet- en regelgeving
