@@ -31,3 +31,7 @@ just_the_docs:
   collections:
     doc:
       name: Begrippen
+
+search:
+  heading_level: 1
+  
