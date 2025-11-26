@@ -122,7 +122,7 @@ def generate_markdown(g, s, info, concept_map):
 title: {label}
 {parent_line}
 permalink: /{CONTENT}/{info['slug']}
-redirects:
+redirect_from:
   - /{SENSE}/{info['slug']}
 ---
 
