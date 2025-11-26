@@ -85,6 +85,7 @@ def create_homepage(g):
 
     md = f"""---
 title: Startpagina
+nav_order: 1
 permalink: /
 ---
 
