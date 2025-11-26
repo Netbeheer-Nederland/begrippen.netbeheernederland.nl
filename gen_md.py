@@ -130,7 +130,7 @@ title: {label}
 {parent_line}
 permalink: {target_permalink}
 redirect_from:
-  - f"/{SENSE}/{target_slug}"
+  - f"/{BASE_URL}/{SENSE}/{target_slug}"
 ---
 
 {{: .note }}
