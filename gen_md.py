@@ -213,8 +213,6 @@ def generate_alias_file(alt_label, target_label, target_permalink):
     # We gebruiken hier quotes om de string veilig te stellen.
     md = f"""---
 title: "{alt_label} &rarr; {target_label}"
-nav_exclude: true
-search_exclude: false
 redirect_to: {target_permalink}
 ---
 

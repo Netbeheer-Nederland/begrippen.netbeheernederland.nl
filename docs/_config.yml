@@ -7,6 +7,17 @@ defaults:
       path: ""
     values:
       layout: default
+      search_exclude: true
+  - scope:
+      path: ""
+      type: "doc"
+    values:
+      search_exclude: false
+  - scope:
+      path: "alias"
+    values:
+      nav_exclude: true
+      search_exclude: false
 
 color_scheme: nbnl
 logo: "/assets/images/logo.svg"
@@ -34,4 +45,3 @@ just_the_docs:
 
 search:
   heading_level: 1
-  
