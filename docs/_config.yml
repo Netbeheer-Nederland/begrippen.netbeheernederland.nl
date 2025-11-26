@@ -2,6 +2,15 @@ title: Begrippenkader | Netbeheer Nederland
 theme: just-the-docs
 baseurl: /energieysteembeheer
 
+collections:
+  doc:
+    output: true
+
+just_the_docs:
+  collections:
+    doc:
+      name: Begrippen
+
 defaults:
   - scope:
       path: ""
@@ -33,15 +42,6 @@ aux_links:
 
 plugins:
   - jekyll-redirect-from
-
-collections:
-  doc:
-    output: true
-
-just_the_docs:
-  collections:
-    doc:
-      name: Begrippen
 
 search:
   heading_level: 1
