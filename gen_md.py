@@ -192,11 +192,52 @@ Kijk gerust rond! Aan deze website wordt momenteel nog gewerkt.
             for related_i in related: md += f"<dd>{related_i}</dd>\n"
         md += "</dl>\n"
 
-    # Overeenkomsten & Verantwoording (de rest van je script)...
-    # (Ik heb de rest van de content functies hier even ingekort voor leesbaarheid, 
-    # maar je originele code voor matches/sources moet hier gewoon blijven staan)
-    
-    # ... Voeg hier de rest van je sections toe (Match, Sources, etc) ...
+    # Overeenkomsten
+    broad_match = get_external_links(g, s, SKOS.broadMatch)
+    narrow_match = get_external_links(g, s, SKOS.narrowMatch)
+    close_match = get_external_links(g, s, SKOS.closeMatch)
+    exact_match = get_external_links(g, s, SKOS.exactMatch)
+    related_match = get_external_links(g, s, SKOS.relatedMatch)
+    if broad_match or narrow_match or close_match or exact_match or related_match:
+        md += "\n## Overeenkomsten\n{: .text-delta }\n\n"
+        md += "<dl>\n"
+        if broad_match:
+            md += "<dt>Overeenkomstig bovenliggend</dt>\n"
+            for broad_match_i in broad_match: md += f"<dd>{broad_match_i}</dd>\n"
+        if narrow_match:
+            md += "<dt>Overeenkomstig onderliggend</dt>\n"
+            for narrow_match_i in narrow_match: md += f"<dd>{narrow_match_i}</dd>\n"
+        if close_match:
+            md += "<dt>Vrijwel overeenkomstig</dt>\n"
+            for close_match_i in close_match: md += f"<dd>{close_match_i}</dd>\n"
+        if exact_match:
+            md += "<dt>Exact overeenkomstig</dt>\n"
+            for exact_match_i in exact_match: md += f"<dd>{exact_match_i}</dd>\n"
+        if related_match:
+            md += "<dt>Overeenkomstig verwant</dt>\n"
+            for related_match_i in related_match: md += f"<dd>{related_match_i}</dd>\n"
+        md += "</dl>\n"
+
+    # Verantwoording
+    sources = get_external_links(g, s, DCTERMS.source)
+    change_notes = [str(l) for l in g.objects(s, SKOS.changeNote)]
+    history_notes = [str(l) for l in g.objects(s, SKOS.historyNote)]
+    if sources or change_notes or history_notes:
+        md += "\n## Verantwoording\n{: .text-delta }\n\n"
+        md += "<dl>\n"
+        if sources:
+            md += "<dt>Bron</dt>\n"
+            for source in sources: md += f"<dd>{source}</dd>\n"
+        if change_notes:
+            md += "<dt>Wijzigingsnotities</dt>\n"
+            for change_note in change_notes: md += f"<dd>{change_note}</dd>\n"
+        if history_notes:
+            md += "<dt>Historie</dt>\n"
+            for history_note in history_notes: md += f"<dd>{history_note}</dd>\n"
+        md += "</dl>\n"
+
+    # Gebruik (placeholder voor gebruik door client-side JavaScript)
+    md += '<div id="concept-usages" class="mt-6"></div>'
 
     # Opslaan hoofdbestand
     filename = f"{info['slug']}.md"
