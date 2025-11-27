@@ -1,0 +1,32 @@
+<div id="giscus-container">
+    <p id="load-giscus-comments">
+        <button type="button" name="button" class="btn fs-3" onclick="loadGiscusComments()">
+            Toon opmerkingen
+        </button>
+    </p>
+</div>
+
+<script>
+    function loadGiscusComments() {
+        let header = '<h2 class="text-delta">Opmerkingen</h2>';
+        let script = document.createElement('script');
+        script.src = "https://giscus.app/client.js";
+        script.async = true;
+        script.crossOrigin = "anonymous";
+
+        script.setAttribute("data-repo", "netbeheer-nederland/energiesysteembeheer");
+        script.setAttribute("data-repo-id", "R_kgDOQbdEvg");
+        script.setAttribute("data-category", "Announcements");
+        script.setAttribute("data-category-id", "DIC_kwDOQbdEvs4Cy4mX");
+        script.setAttribute("data-mapping", "pathname");
+        script.setAttribute("data-strict", "1");
+        script.setAttribute("data-reactions-enabled", "0");
+        script.setAttribute("data-emit-metadata", "0");
+        script.setAttribute("data-input-position", "bottom");
+        script.setAttribute("data-theme", "light");
+        script.setAttribute("data-lang", "nl");
+        script.setAttribute("data-loading", "lazy");
+
+        document.getElementById("giscus-container").replaceChild(script, document.getElementById('load-giscus-comments'));
+    }
+</script>
