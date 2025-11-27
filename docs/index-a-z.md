@@ -1,5 +1,6 @@
 ---
 title: Index A-Z
+nav_order: 5
 ---
 
 {: .note }
@@ -17,6 +18,6 @@ Kijk gerust rond! Aan deze website wordt momenteel nog gewerkt.
 
   {% endif %}
 [{{ p.title }}]({{ p.url | relative_url }})
-{: .lh-0}
+{: .lh-tight}
 
 {% endfor %}
