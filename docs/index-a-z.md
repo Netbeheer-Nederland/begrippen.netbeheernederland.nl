@@ -17,7 +17,7 @@ Kijk gerust rond! Aan deze website wordt momenteel nog gewerkt.
 ## {{ char }}
 
   {% endif %}
-[{{ p.title }}]({{ p.url | relative_url }})
+[{{ p.title }}]({{ p.url }})
 {: .lh-tight}
 
 {% endfor %}
