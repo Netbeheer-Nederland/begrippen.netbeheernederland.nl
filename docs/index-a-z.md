@@ -8,11 +8,9 @@ Kijk gerust rond! Aan deze website wordt momenteel nog gewerkt.
 # Alfabetisch overzicht
 
 {% assign current_letter = "" %}
-{% assign sorted_pages = site.html_pages | sort: "title" %}
+{% assign sorted_pages = site.documents | sort: "title" %}
 
 {% for p in sorted_pages %}
-  {% if p.url contains "/doc/" and p.url != page.url %}
-
     {% assign char = p.title | slice: 0, 1 | upcase %}
 
     {% if char != current_letter %}
@@ -32,8 +30,6 @@ Kijk gerust rond! Aan deze website wordt momenteel nog gewerkt.
     <li>
       <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
     </li>
-
-  {% endif %}
 {% endfor %}
 
 {% if current_letter != "" %}
@@ -42,7 +38,7 @@ Kijk gerust rond! Aan deze website wordt momenteel nog gewerkt.
 
 <h3>Debug Modus</h3>
 <ul>
-  {% for p in site.html_pages %}
+  {% for p in site.documents %}
     <li>
       Titel: <strong>{{ p.title }}</strong> <br>
       Interne URL: <code>{{ p.url }}</code>
