@@ -7,6 +7,9 @@
 .main-content dt {
     margin-bottom: 0;
 }
+.main-content dt::after {
+    content: "";
+}
 
 // Definition list: add border
 .main-content dl {

@@ -134,6 +134,7 @@ permalink: {target_permalink}
 alt_labels:{alt_labels_str}
 redirect_from:
   - /{SENSE}/{target_slug}
+  - /energiesysteembeheer/nl/page/{target_slug}
 ---
 
 {{: .note }}
@@ -143,21 +144,21 @@ Kijk gerust rond! Aan deze website wordt momenteel nog gewerkt.
 """
 
     md += f'\n<meta name="concept-uri" content="{ str(s) }">\n'
-    md += f"\n{str(s)}\n{{: .fs-2 .text-mono .text-grey-dk-000 .mb-4}}\n"
+    md += f"\nURI: {str(s)}\n{{: .fs-2 .text-mono .text-grey-dk-000 .mb-4}}\n"
     
     notation = g.value(s, SKOS.notation)
     if notation: md += f"\n{notation}\n{{: .fs-4 .text-grey-dk-000 .fw-300 .float-right}}\n"
-    
-    definition = g.value(s, SKOS.definition)
-    if definition: md += f"\n## Definitie\n{{: .text-delta }}\n\n{definition}\n"
 
-    # Opmerkingen
-    scope_notes = [str(l) for l in g.objects(s, SKOS.scopeNote)]
+    # Betekenis
+    definition = g.value(s, SKOS.definition)
     comments = [str(l) for l in g.objects(s, RDFS.comment)]
+    scope_notes = [str(l) for l in g.objects(s, SKOS.scopeNote)]
     examples = [str(l) for l in g.objects(s, SKOS.example)]
-    if scope_notes or comments or examples:
-        md += "\n## Opmerkingen\n{: .text-delta }\n\n"
+    if definition or comments or scope_notes or examples or alt_labels or hidden_labels:
+        md += "\n## Betekenis\n{: .text-delta }\n\n"
         md += "<dl>\n"
+        if definition:
+            md += f"<dt>Definitie</dt> <dd>{definition}</dd>\n"
         if comments:
             md += "<dt>Uitleg</dt>\n"
             for comment in comments: md += f"<dd>{comment}</dd>\n"
@@ -167,13 +168,6 @@ Kijk gerust rond! Aan deze website wordt momenteel nog gewerkt.
         if examples:
             md += "<dt>Voorbeeld</dt>\n"
             for example in examples: md += f"<dd>{example}</dd>\n"
-        md += "</dl>\n"
-
-    # Terminologie
-    if alt_labels or hidden_labels or notation:
-        md += "\n## Terminologie\n{: .text-delta }\n\n"
-        md += "<dl>\n"
-        md += f"<dt>Voorkeursterm</dt>\n<dd>{label}</dd>\n"
         if alt_labels:
             md += "<dt>Alternatieve term</dt>\n"
             for alt_label in alt_labels: md += f"<dd>{alt_label}</dd>\n"
@@ -182,12 +176,12 @@ Kijk gerust rond! Aan deze website wordt momenteel nog gewerkt.
             for hidden_label in hidden_labels: md += f"<dd>{hidden_label}</dd>\n"
         md += "</dl>\n"
 
-    # Relaties
+    # Context
     broader = get_internal_links(g, s, SKOS.broader, concept_map)
     narrower = get_internal_links(g, s, SKOS.narrower, concept_map)
     related = get_internal_links(g, s, SKOS.related, concept_map)
     if broader or narrower or related:
-        md += "\n## Relaties\n{: .text-delta }\n\n"
+        md += "\n## Context\n{: .text-delta }\n\n"
         md += "<dl>\n"
         if broader:
             md += "<dt>Bovenliggend</dt>\n"
@@ -200,14 +194,17 @@ Kijk gerust rond! Aan deze website wordt momenteel nog gewerkt.
             for related_i in related: md += f"<dd>{related_i}</dd>\n"
         md += "</dl>\n"
 
-    # Overeenkomsten
+    # Verantwoording
     broad_match = get_external_links(g, s, SKOS.broadMatch)
     narrow_match = get_external_links(g, s, SKOS.narrowMatch)
     close_match = get_external_links(g, s, SKOS.closeMatch)
     exact_match = get_external_links(g, s, SKOS.exactMatch)
     related_match = get_external_links(g, s, SKOS.relatedMatch)
-    if broad_match or narrow_match or close_match or exact_match or related_match:
-        md += "\n## Overeenkomsten\n{: .text-delta }\n\n"
+    sources = get_external_links(g, s, DCTERMS.source)
+    change_notes = [str(l) for l in g.objects(s, SKOS.changeNote)]
+    history_notes = [str(l) for l in g.objects(s, SKOS.historyNote)]
+    if broader or narrower or related or sources or change_notes or history_notes:
+        md += "\n## Verantwoording\n{: .text-delta }\n\n"
         md += "<dl>\n"
         if broad_match:
             md += "<dt>Overeenkomstig bovenliggend</dt>\n"
@@ -224,15 +221,6 @@ Kijk gerust rond! Aan deze website wordt momenteel nog gewerkt.
         if related_match:
             md += "<dt>Overeenkomstig verwant</dt>\n"
             for related_match_i in related_match: md += f"<dd>{related_match_i}</dd>\n"
-        md += "</dl>\n"
-
-    # Verantwoording
-    sources = get_external_links(g, s, DCTERMS.source)
-    change_notes = [str(l) for l in g.objects(s, SKOS.changeNote)]
-    history_notes = [str(l) for l in g.objects(s, SKOS.historyNote)]
-    if sources or change_notes or history_notes:
-        md += "\n## Verantwoording\n{: .text-delta }\n\n"
-        md += "<dl>\n"
         if sources:
             md += "<dt>Bron</dt>\n"
             for source in sources: md += f"<dd>{source}</dd>\n"
