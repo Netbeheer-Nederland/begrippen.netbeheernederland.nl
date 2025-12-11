@@ -178,11 +178,11 @@ Kijk gerust rond! Aan deze website wordt momenteel nog gewerkt.
     if broader or narrower or related:
         md += "\n## Relates\n"
     if broader:
-        md += f"\n**Bovenliggend**: {', '.join({broader})}\n"
+        md += f"\n**Bovenliggend**: {', '.join(broader)}\n"
     if narrower:
-        md += f"\n**Onderliggend**: {', '.join({narrower})}\n"
+        md += f"\n**Onderliggend**: {', '.join(narrower)}\n"
     if related:
-        md += f"\n**Gerelateerd**: {', '.join({related})}\n"
+        md += f"\n**Gerelateerd**: {', '.join(related)}\n"
 
     # Verantwoording
     broad_match = get_external_links(g, s, SKOS.broadMatch)
@@ -196,17 +196,17 @@ Kijk gerust rond! Aan deze website wordt momenteel nog gewerkt.
     if broad_match or narrow_match or close_match or exact_match or related_match or sources or change_notes or history_notes:
         md += "\n## Verantwoording\n"
     if broad_match:
-        md += f"\n**Overeenkomstig bovenliggend**: {', '.join({broad_match})}\n"
+        md += f"\n**Overeenkomstig bovenliggend**: {', '.join(broad_match)}\n"
     if narrow_match:
-        md += f"\n**Overeenkomstig onderliggend**: {', '.join({narrow_match})}\n"
+        md += f"\n**Overeenkomstig onderliggend**: {', '.join(narrow_match)}\n"
     if close_match:
-        md += f"\n**Vrijwel overeenkomstig**: {', '.join({close_match})}\n"
+        md += f"\n**Vrijwel overeenkomstig**: {', '.join(close_match)}\n"
     if exact_match:
-        md += f"\n**Exact overeenkomstig**: {', '.join({exact_match})}\n"
+        md += f"\n**Exact overeenkomstig**: {', '.join(exact_match)}\n"
     if related_match:
-        md += f"\n**Overeenkomstig verwant**: {', '.join({related_match})}\n"
+        md += f"\n**Overeenkomstig verwant**: {', '.join(related_match)}\n"
     if sources:
-        md += f"\n**Bron**: {', '.join({source})}\n"
+        md += f"\n**Bron**: {', '.join(sources)}\n"
     if change_notes:
         for change_note in change_notes: md += f"\n{change_note}\n"
     if history_notes:
