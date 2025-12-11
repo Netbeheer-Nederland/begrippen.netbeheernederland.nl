@@ -149,50 +149,40 @@ Kijk gerust rond! Aan deze website wordt momenteel nog gewerkt.
     notation = g.value(s, SKOS.notation)
     if notation: md += f"\n{notation}\n{{: .fs-4 .text-grey-dk-000 .fw-300 .float-right}}\n"
 
-    # Betekenis
     definition = g.value(s, SKOS.definition)
-    comments = [str(l) for l in g.objects(s, RDFS.comment)]
-    scope_notes = [str(l) for l in g.objects(s, SKOS.scopeNote)]
-    examples = [str(l) for l in g.objects(s, SKOS.example)]
-    if definition or comments or scope_notes or examples or alt_labels or hidden_labels:
-        md += "\n## Betekenis\n{: .text-delta }\n\n"
-        md += "<dl>\n"
-        if definition:
-            md += f"<dt>Definitie</dt> <dd>{definition}</dd>\n"
-        if comments:
-            md += "<dt>Uitleg</dt>\n"
-            for comment in comments: md += f"<dd>{comment}</dd>\n"
-        if scope_notes:
-            md += "<dt>Toelichting</dt>\n"
-            for scope_note in scope_notes: md += f"<dd>{scope_note}</dd>\n"
-        if examples:
-            md += "<dt>Voorbeeld</dt>\n"
-            for example in examples: md += f"<dd>{example}</dd>\n"
-        if alt_labels:
-            md += "<dt>Alternatieve term</dt>\n"
-            for alt_label in alt_labels: md += f"<dd>{alt_label}</dd>\n"
-        if hidden_labels:
-            md += "<dt>Zoekterm</dt>\n"
-            for hidden_label in hidden_labels: md += f"<dd>{hidden_label}</dd>\n"
-        md += "</dl>\n"
+    if definition:
+        md += f"\n> {definition}\n"
 
-    # Context
+    comments = [str(l) for l in g.objects(s, RDFS.comment)]
+    if comments:
+        for comment in comments: md += f"\n{comment}\n"
+
+    scope_notes = [str(l) for l in g.objects(s, SKOS.scopeNote)]
+    if scope_notes:
+        for scope_note in scope_notes: md += f"\n{scope_note}\n"
+
+    examples = [str(l) for l in g.objects(s, SKOS.example)]
+    if examples:
+        md += f"\n**Voorbeeld**: {', '.join(examples)}\n"
+
+    if alt_labels:
+        md += f"\n**Alternatieve term**: {', '.join(alt_labels)}\n"
+
+    if hidden_labels:
+        md += f"\n**Zoekterm**: {', '.join(hidden_labels)}\n"
+
+    # Relaties
     broader = get_internal_links(g, s, SKOS.broader, concept_map)
     narrower = get_internal_links(g, s, SKOS.narrower, concept_map)
     related = get_internal_links(g, s, SKOS.related, concept_map)
     if broader or narrower or related:
-        md += "\n## Context\n{: .text-delta }\n\n"
-        md += "<dl>\n"
-        if broader:
-            md += "<dt>Bovenliggend</dt>\n"
-            for broader_i in broader: md += f"<dd>{broader_i}</dd>\n"
-        if narrower:
-            md += "<dt>Onderliggend</dt>\n"
-            for narrower_i in narrower: md += f"<dd>{narrower_i}</dd>\n"
-        if related:
-            md += "<dt>Gerelateerd</dt>\n"
-            for related_i in related: md += f"<dd>{related_i}</dd>\n"
-        md += "</dl>\n"
+        md += "\n## Relates\n"
+    if broader:
+        md += f"\n**Bovenliggend**: {', '.join({broader})}\n"
+    if narrower:
+        md += f"\n**Onderliggend**: {', '.join({narrower})}\n"
+    if related:
+        md += f"\n**Gerelateerd**: {', '.join({related})}\n"
 
     # Verantwoording
     broad_match = get_external_links(g, s, SKOS.broadMatch)
@@ -203,34 +193,24 @@ Kijk gerust rond! Aan deze website wordt momenteel nog gewerkt.
     sources = get_external_links(g, s, DCTERMS.source)
     change_notes = [str(l) for l in g.objects(s, SKOS.changeNote)]
     history_notes = [str(l) for l in g.objects(s, SKOS.historyNote)]
-    if broader or narrower or related or sources or change_notes or history_notes:
-        md += "\n## Verantwoording\n{: .text-delta }\n\n"
-        md += "<dl>\n"
-        if broad_match:
-            md += "<dt>Overeenkomstig bovenliggend</dt>\n"
-            for broad_match_i in broad_match: md += f"<dd>{broad_match_i}</dd>\n"
-        if narrow_match:
-            md += "<dt>Overeenkomstig onderliggend</dt>\n"
-            for narrow_match_i in narrow_match: md += f"<dd>{narrow_match_i}</dd>\n"
-        if close_match:
-            md += "<dt>Vrijwel overeenkomstig</dt>\n"
-            for close_match_i in close_match: md += f"<dd>{close_match_i}</dd>\n"
-        if exact_match:
-            md += "<dt>Exact overeenkomstig</dt>\n"
-            for exact_match_i in exact_match: md += f"<dd>{exact_match_i}</dd>\n"
-        if related_match:
-            md += "<dt>Overeenkomstig verwant</dt>\n"
-            for related_match_i in related_match: md += f"<dd>{related_match_i}</dd>\n"
-        if sources:
-            md += "<dt>Bron</dt>\n"
-            for source in sources: md += f"<dd>{source}</dd>\n"
-        if change_notes:
-            md += "<dt>Wijzigingsnotities</dt>\n"
-            for change_note in change_notes: md += f"<dd>{change_note}</dd>\n"
-        if history_notes:
-            md += "<dt>Historie</dt>\n"
-            for history_note in history_notes: md += f"<dd>{history_note}</dd>\n"
-        md += "</dl>\n"
+    if broad_match or narrow_match or close_match or exact_match or related_match or sources or change_notes or history_notes:
+        md += "\n## Verantwoording\n"
+    if broad_match:
+        md += f"\n**Overeenkomstig bovenliggend**: {', '.join({broad_match})}\n"
+    if narrow_match:
+        md += f"\n**Overeenkomstig onderliggend**: {', '.join({narrow_match})}\n"
+    if close_match:
+        md += f"\n**Vrijwel overeenkomstig**: {', '.join({close_match})}\n"
+    if exact_match:
+        md += f"\n**Exact overeenkomstig**: {', '.join({exact_match})}\n"
+    if related_match:
+        md += f"\n**Overeenkomstig verwant**: {', '.join({related_match})}\n"
+    if sources:
+        md += f"\n**Bron**: {', '.join({source})}\n"
+    if change_notes:
+        for change_note in change_notes: md += f"\n{change_note}\n"
+    if history_notes:
+        for history_note in history_notes: md += f"\n{history_note}\n"
 
     md += '<div id="concept-usages" class="mt-6"></div>'
 
