@@ -43,6 +43,9 @@ jobs:
       - name: Generate Markdown from SKOS model
         run: python gen_md.py
 
+      - name: Publish TTL file
+        run: python publish_ttl.py
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
