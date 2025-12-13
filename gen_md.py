@@ -112,7 +112,7 @@ Gebruik het nagivatiemenu of de zoekbalk om begrippen te vinden.
     </p>
   </div>
   
-  <a href="{{ '/begrippenkader.ttl' | relative_url }}" class="btn btn-purple" style="white-space: nowrap;" download="">
+  <a href="begrippenkader.ttl" class="btn btn-purple" style="white-space: nowrap;" download="">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; margin-right: 5px;">
       <circle cx="18" cy="5" r="3"></circle>
       <circle cx="6" cy="12" r="3"></circle>
