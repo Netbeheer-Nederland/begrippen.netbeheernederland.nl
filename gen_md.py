@@ -351,7 +351,7 @@ def get_internal_links(g, subject, predicate, concept_map):
         uri = str(obj)
         if uri in concept_map:
             lbl = concept_map[uri]['label']
-            links.append(f"<a href=\"{BASE_URL}/{CONTENT}/{concept_map[uri]['slug']}\">{lbl}</a>")
+            links.append(f"<a href=\"{BASE_URL}/{CONTENT}/{concept_map[uri]['id']}\">{lbl}</a>")
     return links
 
 def get_external_links(g, subject, predicate):
