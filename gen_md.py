@@ -34,6 +34,7 @@ def main():
     # Concepten indexeren
     concept_map = {}
     for s in g.subjects(RDF.type, SKOS.Concept):
+        id = str(s).rstrip("/").split("/")[-1]
         pref_label = g.value(s, SKOS.prefLabel, any=False) or "Naamloos"
         slug = slugify(str(pref_label))
         status_values = list(g.objects(s, ADMS.status))  # returns URIs or Literals
@@ -41,6 +42,7 @@ def main():
 
         concept_map[str(s)] = {
             "uri": str(s),
+            "id": id,
             "label": str(pref_label),
             "slug": slug,
             "broader": [],
@@ -110,9 +112,10 @@ Gebruik het nagivatiemenu of de zoekbalk om begrippen te vinden.
         f.write(md)
 
 def generate_markdown(g, s, info, concept_map, alias_collection):
+    id = info['id']
     label = info['label']
-    target_slug = info['slug']
-    target_permalink = f"/{CONTENT}/{target_slug}"
+    slug = info['slug']
+    target_permalink = f"/{CONTENT}/{id}"
     
     # --- VERZAMELEN ZOEKTERMEN ---
     alt_labels = [str(l) for l in g.objects(s, SKOS.altLabel)]
@@ -144,8 +147,8 @@ title: {label}
 permalink: {target_permalink}
 alt_labels:{alt_labels_str}
 redirect_from:
-  - /{SENSE}/{target_slug}
-  - /energiesysteembeheer/nl/page/{target_slug}
+  - /{SENSE}/{id}
+  - /energiesysteembeheer/nl/page/{slug}
 ---
 
 {{: .note }}
