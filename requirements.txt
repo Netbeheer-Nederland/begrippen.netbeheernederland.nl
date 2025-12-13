@@ -1,3 +1,4 @@
 rdflib
 python-slugify
 pyshacl
+jinja2
