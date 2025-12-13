@@ -41,7 +41,6 @@ jobs:
           begrippenkaders/*.ttl
 
       - name: Generate Markdown from SKOS model
-        # run: python gen_md.py
         run: python generate.py
 
       - name: Publish TTL file
