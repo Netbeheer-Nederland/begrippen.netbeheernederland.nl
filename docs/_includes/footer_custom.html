@@ -65,6 +65,17 @@
     let dataLoaded = false;
     const jsonUrl = "{{ '/assets/begrippenlijst.json' | relative_url }}";
 
+    function scrollToActive() {
+      /* We gebruiken een timeout om zeker te weten dat de DOM getekend is */
+      setTimeout(function() {
+        var activeLink = ulTarget.querySelector('.active');
+        if (activeLink) {
+          /* block: "center" zet hem mooi in het midden */
+          activeLink.scrollIntoView({block: "center", behavior: "auto"}); 
+        }
+      }, 200); /* 200ms wachttijd */
+    }
+
     /* Functie om JSON op te halen en te renderen */
     function loadAndRenderData() {
       if (dataLoaded) return; /* Al gedaan? Stop. */
@@ -77,7 +88,7 @@
           const currentPath = window.location.pathname.replace(/\/$/, "");
 
           /* HTML bouwen */
-          let html = "";
+          let listHtml = "";
 
           data.forEach(item => {
             const itemUrlClean = item.url.replace(/\/$/, "");
@@ -87,26 +98,23 @@
               cssClass += ' active';
             }
 
-            let htmlContent = item.title;
+            let itemHtml = item.title;
             let extraAttrs = "";
 
             if (item.type === 'alias') {
-              /* Styling voor de alias zelf */
               extraAttrs = 'style="font-style: italic; color: #555;"';
-              
-              /* De pijl en de doelterm toevoegen */
-              /* We gebruiken een <span> voor de doelterm om hem wat lichter/kleiner te maken */
-              htmlContent += ' <span style="font-weight: normal; color: #999; font-size: 0.85em;">&rarr; ' + item.target_label + '</span>';
+              itemHtml += ' &rarr; ' + item.target_label;
             }
             
-            html += '<li class="nav-list-item">';
-            html += '<a href="' + item.url + '" class="' + cssClass + '" ' + extraAttrs + '>' + htmlContent + '</a>';
-            html += '</li>';
+            listHtml += '<li class="nav-list-item">';
+            listHtml += '<a href="' + item.url + '" class="' + cssClass + '" ' + extraAttrs + '>' + itemHtml + '</a>';
+            listHtml += '</li>';
           });
 
-          azList.innerHTML = html;
+          azList.innerHTML = listHtml;
           loadingContainer.style.display = 'none'; /* Verberg 'Laden...' */
           dataLoaded = true;
+          scrollToActive();
         })
         .catch(err => {
           loadingMsg.textContent = "Fout bij laden begrippenlijst";
@@ -123,6 +131,12 @@
         btn.textContent = "hiërarchisch";
         localStorage.setItem('skos-nav-pref', 'az');
         loadAndRenderData();
+
+        if (!dataLoaded) {
+          loadAndRenderData(); 
+        } else {
+          scrollToActive();
+        }
       } else {
         /* Weergave: hiërarchie (boom) */
         originalList.style.display = 'block';
