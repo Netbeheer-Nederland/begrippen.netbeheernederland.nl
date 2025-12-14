@@ -62,8 +62,6 @@
     skos:definition "ieder die van een netbeheerder de beschikking heeft gekregen over een aansluiting"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "aangeslotene"@nl ;
-    skos:related :gnhiy,
-        :x6zcz ;
     adms:status status:valid .
 
 :6m4pq a skos:Concept ;
@@ -171,7 +169,5 @@
     skos:definition "periode tussen de ontvangst van de aansluitovereenkomst door de netbeheerder en de beschikbaarstelling van de daarin overeengekomen fysieke aansluitverbinding(en) aan de contractpartij"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "aansluittermijn"@nl ;
-    skos:related :gnhiy,
-        :x6zcz ;
     adms:status status:submitted .
 

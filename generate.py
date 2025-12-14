@@ -182,8 +182,7 @@ def autolink_text(text, matcher, url_map, current_page_title=""):
         
         original_phrase = doc[start:end].text
         url = url_map[original_term_key]
-        tooltip = "Automatisch herkend begrip"
-        link = f'<a href="{url}" class="auto-link" title="{tooltip}">{original_phrase}</a>'
+        link = f'<a href="{url}" class="auto-link">{original_phrase}</a>'
         new_text_parts.append(link)
         
         last_index = doc[end-1].idx + len(doc[end-1].text)
