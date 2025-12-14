@@ -638,8 +638,6 @@
         "invoeding"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "energierichting"@nl ;
-    skos:related :3j33z,
-        :j8cpp ;
     adms:status status:valid .
 
 :zh4p4 a skos:Concept ;

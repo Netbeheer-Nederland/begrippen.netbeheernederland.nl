@@ -1,9 +1,15 @@
-import os, glob, json, unicodedata
-from collections import defaultdict
+import os, glob, json, unicodedata, re, spacy
 from slugify import slugify
 from jinja2 import Environment, FileSystemLoader
 from rdflib import Graph, Namespace, RDF, SKOS, DCTERMS, RDFS, URIRef, FOAF
 from pyshacl import validate
+
+try:
+    nlp = spacy.load("nl_core_news_sm")
+    print("SpaCy Nederlands model geladen.")
+except OSError:
+    print("FOUT: SpaCy Nederlands model niet gevonden. Draai: python -m spacy download nl_core_news_sm")
+    exit(1)
 
 # ==============================================================================
 # CONFIGURATIE & PADEN
@@ -81,7 +87,7 @@ NL_SBB_MAPPING = {
 }
 
 # ==============================================================================
-# 3. HULPFUNCTIES (UTILS)
+# HULPFUNCTIES (UTILS)
 # ==============================================================================
 
 def get_reference(uri_str):
@@ -106,8 +112,63 @@ def normalize_for_sort(text):
     text = text.lower()
     return ''.join(c for c in unicodedata.normalize('NFD', text) if unicodedata.category(c) != 'Mn')
 
+def build_lemma_dictionary(lookup, base_url):
+    """
+    Maakt een woordenboek van lemma -> URL.
+    SpaCy regelt de meervouden, dus we hoeven hier alleen de basisvorm op te slaan.
+    """
+    lemma_dict = {}
+    for uri, data in lookup.items():
+        term = data['label']
+        url = f"{base_url}/doc/{data['reference']}"
+        
+        # We gebruiken het lemma van de term als sleutel
+        # We processen de term met spaCy om het lemma te vinden
+        doc = nlp(term)
+        if doc and len(doc) > 0:
+            # Voor multi-word termen, pak de root. Voor de meeste: het woord zelf.
+            lemma = doc[0].lemma_
+            lemma_dict[lemma.lower()] = url
+            
+    return lemma_dict
+
+def autolink_text(text, lemma_dict):
+    """
+    Vervangt termen in een tekst met Markdown-links m.b.v. NLP lemmatisering.
+    """
+    if not text or not lemma_dict:
+        return text
+
+    # Verwerk de volledige tekst met spaCy
+    doc = nlp(text)
+    
+    # We bouwen een nieuwe tekst op om conflicten met indexen te voorkomen
+    new_text_parts = []
+    last_index = 0
+
+    for token in doc:
+        # Check of het lemma van het huidige woord in onze woordenlijst staat
+        if token.lemma_.lower() in lemma_dict:
+            # We hebben een match!
+            
+            # Voeg alles TUSSEN de vorige match en deze toe
+            new_text_parts.append(text[last_index:token.idx])
+            
+            # Voeg de nieuwe Markdown-link toe
+            url = lemma_dict[token.lemma_.lower()]
+            link = f'[{token.text}]({url})'
+            new_text_parts.append(link)
+            
+            # Update de index
+            last_index = token.idx + len(token.text)
+    
+    # Voeg het laatste stukje van de tekst toe (na de laatste match)
+    new_text_parts.append(text[last_index:])
+    
+    return "".join(new_text_parts)
+
 # ==============================================================================
-# 4. DATA-EXTRACTIE (ETL-LAAG)
+# DATA-EXTRACTIE (ETL-LAAG)
 # ==============================================================================
 
 def build_lookup(g):
@@ -130,7 +191,7 @@ def build_lookup(g):
             }
     return lookup
 
-def extract_concept_data(g, s, lookup):
+def extract_concept_data(g, s, lookup, linking_dict):
     """
     Verzamelt alle data voor één begrip op basis van de NL_SBB_MAPPING.
     Geeft een schone dictionary terug voor de Template.
@@ -151,6 +212,9 @@ def extract_concept_data(g, s, lookup):
         "mapping": NL_SBB_MAPPING, # Config doorgeven aan template voor labels
         "parent_label": None
     }
+
+    # Velden die we willen auto-linken
+    fields_to_link = ["definitie", "uitleg", "toelichting", "voorbeeld"]
 
     # Dynamische extractie o.b.v. config
     for var_name, config in NL_SBB_MAPPING.items():
@@ -190,6 +254,13 @@ def extract_concept_data(g, s, lookup):
                 links.append({"url": url, "label": str(lbl)})
             data[var_name] = links
 
+        # Auto linking
+        if var_name in fields_to_link:
+            if config["type"] == "single" and data.get(var_name):
+                data[var_name] = autolink_text(data[var_name], linking_dict)
+            elif config["type"] == "list" and data.get(var_name):
+                data[var_name] = [autolink_text(item, linking_dict) for item in data[var_name]]
+
     # Speciale logica: Parent bepalen voor kruimelpad (breadcrumbs)
     if data["heeft_bovenliggend_begrip"]:
         data["parent_label"] = data["heeft_bovenliggend_begrip"][0]["label"]
@@ -197,7 +268,7 @@ def extract_concept_data(g, s, lookup):
     return data
 
 # ==============================================================================
-# 5. GENERATOREN (BESTANDEN SCHRIJVEN)
+# GENERATOREN (BESTANDEN SCHRIJVEN)
 # ==============================================================================
 
 def generate_homepage(g, env):
@@ -248,6 +319,24 @@ def generate_concepts(g, env, lookup):
         if not isinstance(s, URIRef): continue
         
         data = extract_concept_data(g, s, lookup)
+        output = template.render(data)
+
+        filename = f"{data['reference']}.md"
+        with open(os.path.join(BEGRIPPEN_DIR, filename), "w", encoding="utf-8") as f:
+            f.write(output)
+        count += 1
+    return count
+
+def generate_concepts(g, env, lookup, linking_dict):
+    print(f" - Begrippen genereren in {BEGRIPPEN_DIR}...")
+    template = env.get_template("begrip.md.j2")
+    ensure_directory(BEGRIPPEN_DIR)
+
+    count = 0
+    for s in g.subjects(RDF.type, SKOS.Concept):
+        if not isinstance(s, URIRef): continue
+        
+        data = extract_concept_data(g, s, lookup, linking_dict)
         output = template.render(data)
 
         filename = f"{data['reference']}.md"
@@ -335,7 +424,7 @@ def generate_json_index(g, lookup):
         json.dump(index_items, f, separators=(',', ':')) # Minified JSON
 
 # ==============================================================================
-# 6. MAIN EXECUTION FLOW
+# MAIN EXECUTION FLOW
 # ==============================================================================
 
 def main():
@@ -373,11 +462,12 @@ def main():
 
     print("Index opbouwen...")
     lookup = build_lookup(g)
-    
+    lemma_dict = build_lemma_dictionary(lookup, BASE_URL) 
+
     print("Bestanden genereren...")
     generate_homepage(g, env)
     
-    n_concepts = generate_concepts(g, env, lookup)
+    n_concepts = generate_concepts(g, env, lookup, lemma_dict)
     print(f"   -> {n_concepts} begrippenpagina's aangemaakt.")
     
     n_aliases = generate_aliases(g, env, lookup)

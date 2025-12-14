@@ -2,3 +2,4 @@ rdflib
 python-slugify
 pyshacl
 jinja2
+spacy
