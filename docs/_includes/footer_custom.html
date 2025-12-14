@@ -40,7 +40,7 @@
 <!--                -->
 
 <!-- DE WISSELKNOP (standaard verborgen) -->
-<span id="skos-toggle-container" class="fw-500">- <a id="btn-toggle-nav">alfabatisch weergeven</a></span>
+<span id="skos-toggle-container" class="fw-500"> - <a href="#" id="btn-toggle-nav">alfabatisch weergeven</a></span>
 
 <!-- DE ALFABETISCHE LIJST (standaard verborgen) -->
 <div id="skos-az-list" style="display: none;">
@@ -88,6 +88,7 @@
       /* --- PLAATSING LOGICA --- */
       const navCategory = document.querySelector('.nav-category');
       navCategory.appendChild(toggleContainer);
+      sidebar.insertBefore(azList, originalList);
 
       originalList.id = "skos-tree-list";
 
