@@ -41,7 +41,7 @@ NL_SBB_MAPPING = {
     "heeft_overeenkomstig_bovenliggend": {"label": "Heeft overeenkomstig bovenliggend", "pred": SKOS.broadMatch, "type": "external"},
     "heeft_overeenkomstig_onderliggend": {"label": "Heeft overeenkomstig onderliggend", "pred": SKOS.narrowMatch, "type": "external"},
     "is_overeenkomstig_verwant": {"label": "Is overeenkomstig verwant", "pred": SKOS.relatedMatch, "type": "external"},
-    "bron": {"label": "Bron", "pred": DCTERMS.source, "type": "external"},
+    "heeft_bron": {"label": "Heeft bron", "pred": DCTERMS.source, "type": "external"},
 }
 
 def main():
