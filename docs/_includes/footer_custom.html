@@ -98,11 +98,9 @@
               cssClass += ' active';
             }
 
-            let itemHTML = '';
+            let itemHTML = item.title;
             if (item.type === 'alias') {
-                itemHTML = '<span class="grey-dk-000">'+ item.title + ' &rarr; </span>' + item.target_label;
-            } else {
-                itemHTML = item.title;
+                itemHTML = '<span style="color:#555">'+ item.title + ' &rarr; </span>' + item.target_label;
             }
 
             listHTML += '<li class="nav-list-item">';
