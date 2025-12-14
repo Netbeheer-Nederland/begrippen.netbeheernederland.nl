@@ -3,3 +3,4 @@ python-slugify
 pyshacl
 jinja2
 spacy
+pattern3
