@@ -19,8 +19,8 @@
 .main-content dt::after {
     content: "";
 }
-// Definition list on small screens: no columns
-@media (max-width: map-get($media-queries, sm)) {
+// Definition list on smaller screens: no columns
+@media (max-width: map-get($media-queries, md)) {
     .main-content dl {
         display: block;
     }
