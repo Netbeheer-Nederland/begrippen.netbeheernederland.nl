@@ -40,11 +40,7 @@
 <!--                -->
 
 <!-- DE WISSELKNOP (standaard verborgen) -->
-<div id="skos-toggle-container" style="display: none; padding: 10px 0; margin-bottom: 10px; border-bottom: 1px solid #eee;">
-  <button id="btn-toggle-nav" class="btn btn-sm btn-outline" style="width: 100%; text-align: center;">
-    Alfabetisch
-  </button>
-</div>
+<span id="skos-toggle-container" class="fw-500">- <a id="btn-toggle-nav">alfabatisch weergeven</a></span>
 
 <!-- DE ALFABETISCHE LIJST (standaard verborgen) -->
 <div id="skos-az-list" style="display: none;">
@@ -65,7 +61,7 @@
   document.addEventListener("DOMContentLoaded", function() {
     /* Selecteer elementen */
     var sidebar = document.querySelector('.site-nav');
-    var originalList = document.querySelector('.site-nav > .nav-list'); 
+    var originalList = document.querySelector('.site-nav > .nav-category + .nav-list');
     var toggleContainer = document.getElementById('skos-toggle-container');
     var azList = document.getElementById('skos-az-list');
     var btn = document.getElementById('btn-toggle-nav');
@@ -76,15 +72,13 @@
         /* Weergave: A-Z */
         originalList.style.display = 'none';
         azList.style.display = 'block';
-        btn.textContent = "Hiërarchisch"; 
-        btn.classList.add('btn-primary');
+        btn.textContent = "hiërarchisch weergeven";
         localStorage.setItem('skos-nav-pref', 'az');
       } else {
         /* Weergave: hiërarchie (boom) */
         originalList.style.display = 'block';
         azList.style.display = 'none';
-        btn.textContent = "Alfabetisch weergeven"; 
-        btn.classList.remove('btn-primary');
+        btn.textContent = "alfabetisch weergeven"; 
         localStorage.setItem('skos-nav-pref', 'tree');
       }
     }
@@ -92,24 +86,9 @@
     if (sidebar && originalList && toggleContainer && azList) {
       
       /* --- PLAATSING LOGICA --- */
-      var foundHeader = false;
-      var allItems = document.querySelectorAll('.site-nav .nav-category, .site-nav .nav-list-item');
+      const navCategory = document.querySelector('.nav-category');
+      navCategory.appendChild(toggleContainer);
 
-      for (var i = 0; i < allItems.length; i++) {
-        if (allItems[i].innerText.trim() === "Begrippen") {
-          allItems[i].parentNode.insertBefore(toggleContainer, allItems[i].nextSibling);
-          allItems[i].parentNode.insertBefore(azList, toggleContainer.nextSibling);
-          foundHeader = true;
-          break;
-        }
-      }
-
-      if (!foundHeader) {
-        sidebar.insertBefore(toggleContainer, originalList);
-        sidebar.insertBefore(azList, originalList);
-      }
-
-      toggleContainer.style.display = "block";
       originalList.id = "skos-tree-list";
 
       /* --- GEHEUGEN CHECK --- */
