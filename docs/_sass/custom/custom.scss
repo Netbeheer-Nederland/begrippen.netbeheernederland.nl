@@ -8,7 +8,7 @@
     grid-template-columns: fit-content(30%) 1fr;
 }
 // Definition list: more space between (multi-line) items
-.main-content dt:nth-child(n+1), .main-content dt:nth-child(n+1) + dd {
+.main-content dt:nth-child(n+2), .main-content dt:nth-child(n+2) + dd {
     margin-top: 1em;
 }
 // Definition list: fix margin in multi-line items
@@ -27,7 +27,7 @@
     .main-content dt {
         text-align: left;
     }
-    .main-content dt + dd {
+    .main-content dt:nth-child(n+2) + dd {
         margin-top: 0;
     }
     .main-content dd {
