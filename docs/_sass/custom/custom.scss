@@ -3,6 +3,10 @@
     display: inline-block;
 }
 
+// Definition list: broader left-column
+.main-content dl {
+    grid-template: auto / 15em 1fr;
+}
 // Definition list: fix margin in multi-line items
 .main-content dt {
     margin-bottom: 0;
