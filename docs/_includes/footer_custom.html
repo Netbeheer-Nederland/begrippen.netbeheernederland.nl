@@ -1,3 +1,7 @@
+<!--                      -->
+<!-- GISCUS (opmerkingen) -->
+<!--                      -->
+
 <div id="giscus-container">
     <p id="load-giscus-comments">
         <button type="button" name="button" class="btn fs-3" onclick="loadGiscusComments()">
@@ -29,4 +33,105 @@
 
         document.getElementById("giscus-container").replaceChild(script, document.getElementById('load-giscus-comments'));
     }
+</script>
+
+<!--                -->
+<!-- NAVIGATIEMODUS -->
+<!--                -->
+
+<!-- DE WISSELKNOP (standaard verborgen) -->
+<div id="skos-toggle-container" style="display: none; padding: 10px 0; margin-bottom: 10px; border-bottom: 1px solid #eee;">
+  <button id="btn-toggle-nav" class="btn btn-sm btn-outline" style="width: 100%; text-align: center;">
+    Alfabetisch
+  </button>
+</div>
+
+<!-- DE ALFABETISCHE LIJST (standaard verborgen) -->
+<div id="skos-az-list" style="display: none;">
+  <ul class="nav-list">
+    <!-- LET OP: Zorg dat 'site.doc' klopt met _config.yml -->
+    {% assign items = site.doc | sort: 'title' %}
+    
+    {% for page in items %}
+        <li class="nav-list-item">
+          <a href="{{ page.url | relative_url }}" class="nav-list-link">{{ page.title }}</a>
+        </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<!-- HET SCRIPT (zet alles op de juiste plek en regelt de klik) -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Selecteer elementen
+    var sidebar = document.querySelector('.site-nav');
+    var originalList = document.querySelector('.site-nav > .nav-list'); 
+    var toggleContainer = document.getElementById('skos-toggle-container');
+    var azList = document.getElementById('skos-az-list');
+    var btn = document.getElementById('btn-toggle-nav');
+
+    // Functie om de weergave te bepalen (en op te slaan)
+    function setNavMode(mode) {
+      if (mode === 'az') {
+        // Weergave: A-Z
+        originalList.style.display = 'none';
+        azList.style.display = 'block';
+        btn.textContent = "Hiërarchisch"; 
+        btn.classList.add('btn-primary');
+        localStorage.setItem('skos-nav-pref', 'az'); // OPSLAAN
+      } else {
+        // Weergave: hiërarchie (Boom)
+        originalList.style.display = 'block';
+        azList.style.display = 'none';
+        btn.textContent = "Alfabetisch weergeven"; 
+        btn.classList.remove('btn-primary');
+        localStorage.setItem('skos-nav-pref', 'tree'); // OPSLAAN
+      }
+    }
+
+    if (sidebar && originalList && toggleContainer && azList) {
+      
+      // --- PLAATSING LOGICA ---
+      var foundHeader = false;
+      var allItems = document.querySelectorAll('.site-nav .nav-category, .site-nav .nav-list-item');
+
+      for (var i = 0; i < allItems.length; i++) {
+        if (allItems[i].innerText.trim() === "Begrippen") {
+          allItems[i].parentNode.insertBefore(toggleContainer, allItems[i].nextSibling);
+          allItems[i].parentNode.insertBefore(azList, toggleContainer.nextSibling);
+          foundHeader = true;
+          break;
+        }
+      }
+
+      if (!foundHeader) {
+        sidebar.insertBefore(toggleContainer, originalList);
+        sidebar.insertBefore(azList, originalList);
+      }
+
+      toggleContainer.style.display = "block";
+      originalList.id = "skos-tree-list";
+
+      // --- GEHEUGEN CHECK ---
+      // Kijk of er een voorkeur is opgeslagen. Zo niet, standaard 'tree'.
+      var savedPref = localStorage.getItem('skos-nav-pref');
+      
+      if (savedPref === 'az') {
+        setNavMode('az');
+      } else {
+        // Standaard gedrag (of expliciet 'tree')
+        setNavMode('tree');
+      }
+
+      // --- KLIK EVENT ---
+      btn.addEventListener('click', function() {
+        // Check huidige status door naar display te kijken
+        if (azList.style.display === 'none') {
+          setNavMode('az');
+        } else {
+          setNavMode('tree');
+        }
+      });
+    }
+  });
 </script>
