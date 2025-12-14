@@ -1,6 +1,6 @@
-<!--                      -->
-<!-- GISCUS (opmerkingen) -->
-<!--                      -->
+<!--             -->
+<!-- OPMERKINGEN -->
+<!--             -->
 
 <div id="giscus-container">
     <p id="load-giscus-comments">
@@ -35,33 +35,29 @@
     }
 </script>
 
-<!--                -->
-<!-- NAVIGATIEMODUS -->
-<!--                -->
+<!--                  -->
+<!-- NAVIGATIE TOGGLE -->
+<!--                  -->
 
-<!-- DE WISSELKNOP (standaard verborgen) -->
-<span id="skos-toggle-container" class="fw-500"> - <a href="#" id="btn-toggle-nav">alfabatisch</a></span>
+<span id="skos-toggle-container" class="fw-500" style="display:none"> - <span class="text-purple-000" style="cursor:pointer" id="btn-toggle-nav">alfabatisch</span></span>
 
-<!-- DE ALFABETISCHE LIJST (standaard verborgen) -->
-<ul class="nav-list" id="skos-az-list" style="display: none;">
-    <li class="nav-list-item" id="skos-loading-container">
-        <span class="nav-list-link" id="skos-loading-msg">Laden...</span>
+<ul id="skos-az-list" class="nav-list" style="display:none">
+    <li id="skos-loading-container" class="nav-list-item">
+        <span id="skos-loading-msg" class="nav-list-link">Laden...</span>
     </li>
 </ul>
 
-<!-- HET SCRIPT (zet alles op de juiste plek en regelt de klik) -->
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    /* Selecteer elementen */
     const sidebar = document.querySelector('.site-nav');
+    const navCategory = document.querySelector('.nav-category');
     const originalList = document.querySelector('.site-nav > .nav-category + .nav-list');
-    const toggleContainer = document.getElementById('skos-toggle-container');
     const azList = document.getElementById('skos-az-list');
+    const toggleContainer = document.getElementById('skos-toggle-container');
+    const btn = document.getElementById('btn-toggle-nav');
     const loadingContainer = document.getElementById('skos-loading-container');
     const loadingMsg = document.getElementById('skos-loading-msg');
-    const btn = document.getElementById('btn-toggle-nav');
 
-    /* Variabele om bij te houden of we de data al hebben */
     let dataLoaded = false;
     const jsonUrl = "{{ '/assets/begrippenlijst.json' | relative_url }}";
 
@@ -72,18 +68,14 @@
       }
     }
 
-    /* Functie om JSON op te halen en te renderen */
     function loadAndRenderData() {
-      if (dataLoaded) return; /* Al gedaan? Stop. */
+      if (dataLoaded) return;
 
       fetch(jsonUrl)
         .then(response => response.json())
         .then(data => {
-
-          /* Huidige URL bepalen en normaliseren (laatste slash eraf) */
           const currentPath = window.location.pathname.replace(/\/$/, "");
 
-          /* HTML bouwen */
           let listHTML = "";
 
           data.forEach(item => {
@@ -96,7 +88,7 @@
 
             let itemHTML = item.title;
             if (item.type === 'alias') {
-                itemHTML = '<span style="color:#555">'+ item.title + ' &rarr; </span>' + item.target_label;
+                itemHTML = '<span class="text-grey-dk-000">' + item.title + ' &rarr; </span>' + item.target_label;
             }
 
             listHTML += '<li class="nav-list-item">';
@@ -105,7 +97,7 @@
           });
 
           azList.innerHTML = listHTML;
-          loadingContainer.style.display = 'none'; /* Verberg 'Laden...' */
+          loadingContainer.style.display = 'none';
           dataLoaded = true;
           scrollToActive();
         })
@@ -115,52 +107,39 @@
         });
     }
 
-    /* Functie om de weergave te bepalen (en op te slaan) */
     function setNavMode(mode) {
       if (mode === 'az') {
-        /* Weergave: A-Z */
         originalList.style.display = 'none';
         azList.style.display = 'block';
-        btn.textContent = "hiërarchisch";
+        btn.textContent = 'hiërarchisch';
         localStorage.setItem('skos-nav-pref', 'az');
-        loadAndRenderData();
-
         if (!dataLoaded) {
           loadAndRenderData(); 
         } else {
           scrollToActive();
         }
       } else {
-        /* Weergave: hiërarchie (boom) */
         originalList.style.display = 'block';
         azList.style.display = 'none';
-        btn.textContent = "alfabetisch"; 
+        btn.textContent = 'alfabetisch'; 
         localStorage.setItem('skos-nav-pref', 'tree');
       }
     }
 
-    if (sidebar && originalList && toggleContainer && azList) {
-      
-      /* --- PLAATSING LOGICA --- */
-      const navCategory = document.querySelector('.nav-category');
+    if (sidebar && navCategory && originalList && toggleContainer && azList) {
       navCategory.appendChild(toggleContainer);
+      toggleContainer.style.display = 'inline';
       sidebar.insertBefore(azList, originalList);
-
       originalList.id = "skos-tree-list";
 
-      /* --- GEHEUGEN CHECK --- */
-      /* Kijk of er een voorkeur is opgeslagen. Zo niet, standaard 'tree'. */
       const savedPref = localStorage.getItem('skos-nav-pref');
-      
       if (savedPref === 'az') {
         setNavMode('az');
       } else {
         setNavMode('tree');
       }
 
-      /* --- KLIK EVENT --- */
       btn.addEventListener('click', function() {
-        /* Check huidige status door naar display te kijken */
         if (azList.style.display === 'none') {
           setNavMode('az');
         } else {
