@@ -382,7 +382,7 @@ def main():
     n_aliases = generate_aliases(g, env, lookup)
     print(f"   -> {n_aliases} redirects aangemaakt.")
     
-    generate_json_index(g, env, lookup)
+    generate_json_index(g, lookup)
     print("   -> Begrippenlijst aangemaakt.")
 
     print("=== Klaar! ===")
