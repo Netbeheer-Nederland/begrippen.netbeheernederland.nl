@@ -68,7 +68,7 @@
     function scrollToActive() {
       /* We gebruiken een timeout om zeker te weten dat de DOM getekend is */
       setTimeout(function() {
-        var activeLink = ulTarget.querySelector('.active');
+        var activeLink = azList.querySelector('.active');
         if (activeLink) {
           /* block: "center" zet hem mooi in het midden */
           activeLink.scrollIntoView({block: "center", behavior: "auto"}); 
@@ -98,16 +98,14 @@
               cssClass += ' active';
             }
 
-            let itemHtml = item.title;
-            let extraAttrs = "";
-
             if (item.type === 'alias') {
-              extraAttrs = 'style="font-style: italic; color: #555;"';
-              itemHtml += ' &rarr; ' + item.target_label;
+                let itemHtml = '<span class="grey-dk-000">'+ item.title + ' &rarr; </span>' + item.target_label;
+            } else {
+                let itemHtml = item.title;
             }
-            
+
             listHtml += '<li class="nav-list-item">';
-            listHtml += '<a href="' + item.url + '" class="' + cssClass + '" ' + extraAttrs + '>' + itemHtml + '</a>';
+            listHtml += '<a href="' + item.url + '" class="' + cssClass + '">' + itemHtml + '</a>';
             listHtml += '</li>';
           });
 
