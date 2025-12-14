@@ -16,9 +16,18 @@ Kijk gerust rond! Aan deze website wordt momenteel nog gewerkt.
 {% if status == 'invalid' %}
 Ongeldig
 {: .label .label-red }
+{% elif status == 'retired' %}
+Buiten gebruik
+{: .label .label-red }
 {% elif status == 'submitted' %}
 Ingediend
 {: .label .label-yellow }
+{% elif status == 'superseded' %}
+Vervangen
+{: .label .label-red }
+{% else %}
+Onbekende status
+{: .label .label-red }
 {% endif %}
 
 <meta name="concept-uri" content="{{ uri }}">
