@@ -600,8 +600,6 @@
     skos:altLabel "leveringsrichting"@nl ;
     skos:broader :tibcm ;
     skos:definition "kant waarop energie beweegt"@nl ;
-    skos:example "afname"@nl,
-        "invoeding"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "energierichting"@nl ;
     adms:status status:valid .

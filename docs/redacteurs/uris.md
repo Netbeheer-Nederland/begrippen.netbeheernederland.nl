@@ -1,17 +1,16 @@
 ---
 title: URI-strategie
 parent: Redacteurs
-nav_exclude: true
 ---
 
 # URI-strategie
 Conceptversie
-{: .label .label-yellow }
 
 Met deze URI-strategie borgen we een persistente en webvriendelijke identificatie in lijn met [Linked Data](https://www.w3.org/DesignIssues/LinkedData.html)- en [FAIR-principes](https://www.go-fair.org/fair-principles/).
 
-{: .text-delta }
 URI-patroon
+{: .text-delta }
+
 <dl>
     <dt>Begrippenkader</dt>
     <dd><code>https://begrippen.netbeheernederland.nl</code></dd>
@@ -21,14 +20,13 @@ URI-patroon
     <dd><code>https://begrippen.netbeheernederland.nl/doc/{id}</code></dd>
 </dl>
 
-waarbij `{id}` wordt vervangen door de [identifier](/energiesysteembeheer/redacteurs/identificatie) van het begrip.
+waarbij `{id}` wordt vervangen door de [identifier](identificatie) van het begrip.
 
 ---
 
 Het begrippenkader is een [information resource](https://www.w3.org/TR/2004/REC-webarch-20041215/#def-information-resource) en wordt daarom geïdentificeerd met één URI, die tevens het adres vormt van de documentatie.
 
-Voor begrippen volgen we de strategie beschreven in [sectie 4.1 van Cool URIs for the Semantic Web
-](https://www.w3.org/TR/cooluris/#r303gendocument). Hiermee sluiten we aan bij conventies uit [de Stelselcatalogus](https://www.stelselcatalogus.nl/documenten/linked_data_structuur) en de [PLDN-URI-strategie](https://www.pldn.nl/wiki/Boek/URI-strategie). Deze strategie maakt onderscheid tussen de identiteit van het begrip (`/id/{id}`) en het document wat een beschrijving van het begrip biedt (`/doc/{id}`), en schrijft een automatisch doorverwijzingsmechanisme voor om de documentatie te bereiken.[^1]
+Voor begrippen volgen we de strategie beschreven in [sectie 4.1 van Cool URIs for the Semantic Web](https://www.w3.org/TR/cooluris/#r303gendocument). Hiermee sluiten we aan bij conventies uit de [Stelselcatalogus](https://www.stelselcatalogus.nl/documenten/linked_data_structuur) en de [PLDN-URI-strategie](https://www.pldn.nl/wiki/Boek/URI-strategie). Deze strategie maakt onderscheid tussen de identiteit van het begrip (`/id/{id}`) en het document dat een beschrijving van het begrip biedt (`/doc/{id}`), en schrijft een automatisch doorverwijzingsmechanisme voor om de documentatie te bereiken.[^1]
 
 <details closed markdown="block">
   <summary>
@@ -36,9 +34,8 @@ Voor begrippen volgen we de strategie beschreven in [sectie 4.1 van Cool URIs fo
   </summary>
   {: .text-delta }
   <pre>
-  <https://begrippen.netbeheernederland.nl/id/11358ed2-de31-455e-8f72-f7f0d8adaa29>
+  <https://begrippen.netbeheernederland.nl/id/da2a9>
       a skos:Concept ;
-      dct:identifier "11358ed2-de31-455e-8f72-f7f0d8adaa29" ;
       skos:prefLabel "aansluiting"@nl .
   </pre>
 </details>

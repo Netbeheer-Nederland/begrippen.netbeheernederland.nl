@@ -1,14 +1,11 @@
 ---
 title: Identificatie
 parent: Redacteurs
-nav_exclude: true
 ---
 
 # Identificatie
-Conceptversie
-{: .label .label-yellow }
 
-Ieder begrip krijgt een betekenisloze, stabiele UUID (versie 4) toegekend. Deze wordt als identificerend kenmerk vastgelegd met [`dct:identifier`](http://purl.org/dc/terms/identifier).
+Ieder begrip krijgt een betekenisloze, stabiele [NanoID](https://github.com/ai/nanoid) met karakterlengte `5` en alfabet `2346789abcdefghijkmnpqrstwxyz`. Het alfabet bevat geen hoofdletters om problemen met bestandsnamen op Windows te voorkomen. Daarnaast vermijden we look-alikes (`1l0ouv5s`). Dit patroon geeft meer dan 20 miljoen mogelijkheden. Bij 642 voorkomens is er 1% kans op minimaal één botsing.
 
 <details closed markdown="block">
   <summary>
@@ -16,8 +13,8 @@ Ieder begrip krijgt een betekenisloze, stabiele UUID (versie 4) toegekend. Deze 
   </summary>
   {: .text-delta }
   <pre>
-  <11358ed2-de31-455e-8f72-f7f0d8adaa29> a skos:Concept ;
-      dct:identifier "11358ed2-de31-455e-8f72-f7f0d8adaa29" ;
+  <b9dqx> a skos:Concept ;
+      dct:identifier "b9dqx" ;
       skos:prefLabel "aansluiting"@nl .
   </pre>
 </details>
@@ -27,4 +24,6 @@ Ieder begrip krijgt een betekenisloze, stabiele UUID (versie 4) toegekend. Deze 
 {: .note-title }
 > TIP
 >
-> UUID’s kunnen eenvoudig worden gegenereerd met hulpmiddelen in bijvoorbeeld Visual Studio Code of via diverse websites.
+> NanoID's kunnen eenvoudig worden gegenereerd met hulpmiddelen in bijvoorbeeld Visual Studio Code of via diverse websites zoals [nanoid.jormaechea.com.ar](https://nanoid.jormaechea.com.ar/?alphabet=2346789abcdefghijkmnpqrstwxyz&length=5) of [nanoid.yuuniworks.com](https://nanoid.yuuniworks.com/).
+>
+> In Visual Studio Code kun je [Mentor](https://marketplace.visualstudio.com/items?itemName=faubulous.mentor) gebruiken om bij een NanoID de voorkeursterm te tonen.
