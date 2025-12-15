@@ -11,10 +11,10 @@ Ieder begrip krijgt een betekenisloos, stabiel [NanoID](https://github.com/ai/na
     <dt>Aantal karakters</dt>
     <dd>5</dd>
     <dt>Alafabet</dt>
-    <dd><code>2346789abcdefghijkmnpqrstwxyz</code></dd>
+    <dd><code>2346789abcdefghijkmnpqrtwxyz</code></dd>
 </dl>
 
-Met 5 karakters kunnen al meer dan 20 miljoen unieke NanoID's gegenereerd worden. Bij 642 voorkomens is er slechts 1% kans op minimaal één botsing.
+Met 5 karakters kunnen al meer dan 17 miljoen unieke NanoID's gegenereerd worden. Bij 588 voorkomens is er slechts 1% kans op minimaal één botsing.
 
 Het alfabet bevat geen hoofdletters om problemen met bestandsnamen op Windows te voorkomen. Daarnaast vermijden we look-alikes (`1l0ouv5s`).
 
@@ -30,7 +30,7 @@ Het NanoID maakt onderdeel uit van de [URI](uris) van een begrip en wordt moment
 Daarmee is momenteel enkel een mens dat begrijpt hoe de URI is opgebouwd in staat het is NanoID van een begrip te achterhalen.
 
 {: .tip}
-> NanoID's kunnen eenvoudig worden gegenereerd met hulpmiddelen in bijvoorbeeld Visual Studio Code of via diverse websites zoals [nanoid.jormaechea.com.ar](https://nanoid.jormaechea.com.ar/?alphabet=2346789abcdefghijkmnpqrstwxyz&length=5) of [nanoid.yuuniworks.com](https://nanoid.yuuniworks.com/).
+> NanoID's kunnen eenvoudig worden gegenereerd met hulpmiddelen in bijvoorbeeld Visual Studio Code of via diverse websites zoals [nanoid.jormaechea.com.ar](https://nanoid.jormaechea.com.ar/?alphabet=2346789abcdefghijkmnpqrtwxyz&length=5) of [nanoid.yuuniworks.com](https://nanoid.yuuniworks.com/).
 >
 > In Visual Studio Code kun je [Mentor](https://marketplace.visualstudio.com/items?itemName=faubulous.mentor) gebruiken om bij een NanoID de voorkeursterm te tonen.
 
