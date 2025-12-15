@@ -35,6 +35,9 @@ favicon_ico: "/assets/images/favicon.png"
 callouts:
   note:
     color: purple
+  tip:
+    title: Tip
+    color: purple
 
 aux_links:
   "Modellen van Netbeheer Nederland":
