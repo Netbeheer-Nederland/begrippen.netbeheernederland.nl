@@ -44,8 +44,7 @@
 // Auto link
 .auto-link {
     color: inherit;
-    text-decoration-style: dotted;
-    text-decoration-color: $link-color;
+    text-decoration: underline dotted $link-color;
 }
 .auto-link:hover {
     color: $link-color;
