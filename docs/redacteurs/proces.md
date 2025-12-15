@@ -61,4 +61,3 @@ stateDiagram-v2
     uitgefaseerd --> [*]
     verwijderd --> [*]
 ```
-
