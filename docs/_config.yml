@@ -46,8 +46,5 @@ aux_links:
 plugins:
   - jekyll-redirect-from
 
-search:
-  heading_level: 1
-
 mermaid:
   version: 9.1.3
