@@ -344,8 +344,8 @@ def generate_downloadable_json(g):
 
     for s, _, o in g.triples((None, SKOS.prefLabel, None)):
         s_str = str(s)
-        if s_str.startswith(PUBLISH_BASE_URI):
-            local_id = s_str.replace(PUBLISH_BASE_URI, "")
+        if s_str.startswith(CONCEPT_NAMESPACE):
+            local_id = s_str.replace(CONCEPT_NAMESPACE, "")
             lookup[local_id] = {
                 "label": str(o),
                 "uri": s_str
