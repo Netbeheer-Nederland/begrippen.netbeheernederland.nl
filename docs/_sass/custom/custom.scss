@@ -43,9 +43,12 @@
 
 // Auto link
 .auto-link {
-  text-decoration: none;
-  border-bottom: 1px dotted $link-color;
+    color: inherit;
+    text-decoration-style: dotted;
+    text-decoration-color: $link-color;
+    border-bottom: 1px dotted $link-color;
 }
 .auto-link:hover {
-  border-bottom-style: solid;
+    color: $link-color;
+    text-decoration-style: solid;
 }
