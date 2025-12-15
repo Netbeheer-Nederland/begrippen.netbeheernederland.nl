@@ -43,8 +43,6 @@ aux_links:
   "Modellen van Netbeheer Nederland":
     - "/"
 
-heading_anchors: false
-
 plugins:
   - jekyll-redirect-from
 
