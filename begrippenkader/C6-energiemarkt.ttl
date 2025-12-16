@@ -163,15 +163,6 @@
     skos:prefLabel "elektriciteitsopslageenheid"@nl ;
     adms:status status:valid .
 
-:9p2c3 a skos:Concept ;
-    dct:source :ma2mm ;
-    skos:altLabel "HD"@nl ;
-    skos:broader :6n8tj ;
-    skos:definition "drukniveau hoger dan 200 mbar en lager dan of gelijk aan 8 bar"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "hoge druk"@nl ;
-    adms:status status:submitted .
-
 :9x498 a skos:Concept ;
     skos:broader :zh4p4 ;
     skos:definition "transportrecht dat altijd geldt"@nl ;
@@ -207,15 +198,6 @@
     skos:scopeNote "(Mogelijk enige) deel van een op afstand uitleesbare kleinverbruikmeetinrichting is de comptabele energiehoeveelheidsmeter met communicatiefunctionaliteit. Deze staat ook wel bekend als slimme meter."@nl ;
     adms:status status:valid .
 
-:anskq a skos:Concept ;
-    dct:source :ma2mm ;
-    skos:altLabel "EHD"@nl ;
-    skos:broader :6n8tj ;
-    skos:definition "drukniveau hoger dan 8 bar"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "extrahoge druk"@nl ;
-    adms:status status:submitted .
-
 :at98s a skos:Concept ;
     skos:broader :zjfey ;
     skos:definition "bieding redispatch op verzoek van de netbeheerder, tegen niet-marktgebaseerde voorwaarden"@nl ;
@@ -240,15 +222,6 @@
     skos:prefLabel "standaardjaarafname"@nl ;
     adms:status status:valid .
 
-:esdhd a skos:Concept ;
-    skos:altLabel "EHS"@nl ;
-    skos:broader :w8e9z ;
-    skos:definition "spanningsniveau van 220 kV of hoger"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "extrahoogspanning"@nl ;
-    skos:scopeNote "Spanningsniveaus worden op verschillende manieren gedefinieerd. Deze definitie gaat uit van de door netbeheerders meest gebruikte indeling. Andere indelingen kennen vaak geen extrahoogspanning."@nl ;
-    adms:status status:submitted .
-
 :eyp3g a skos:Concept ;
     dct:source :6cpic ;
     skos:broader :gnhiy ;
@@ -257,15 +230,6 @@
     skos:prefLabel "allocatiepunt"@nl ;
     adms:status status:valid .
 
-:f3ssk a skos:Concept ;
-    dct:source :ma2mm ;
-    skos:altLabel "LD"@nl ;
-    skos:broader :6n8tj ;
-    skos:definition "drukniveau van 200 mbar of lager"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "lage druk"@nl ;
-    adms:status status:submitted .
-
 :gsewd a skos:Concept ;
     dct:source :wqe42 ;
     skos:broader :gtj7b ;
@@ -273,15 +237,6 @@
     skos:inScheme <> ;
     skos:prefLabel "maximumcapaciteit"@nl ;
     adms:status status:valid .
-
-:irw4s a skos:Concept ;
-    skos:altLabel "TS"@nl ;
-    skos:broader :w8e9z ;
-    skos:definition "spanningsniveau van doorgaans 25 kV of hoger en lager dan 110 kV"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "tussenspanning"@nl ;
-    skos:scopeNote "Spanningsniveaus worden op verschillende manieren gedefinieerd. Deze definitie gaat uit van de door netbeheerders meest gebruikte indeling. Andere indelingen kennen vaak geen tussenspanning."@nl ;
-    adms:status status:submitted .
 
 :jchwi a skos:Concept ;
     skos:altLabel "C-CSC"@nl ;
@@ -316,15 +271,6 @@
     skos:prefLabel "balanceringsverantwoordelijke"@nl ;
     adms:status status:valid .
 
-:mrhy7 a skos:Concept ;
-    skos:altLabel "MS"@nl ;
-    skos:broader :w8e9z ;
-    skos:definition "spanningsniveau hoger dan 1 kV in geval van wisselspanning en hoger dan 1,5 kV in geval van gelijkspanning en gewoonlijk lager dan 25 kV"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "middenspanning"@nl ;
-    skos:scopeNote "Spanningsniveaus worden op verschillende manieren gedefinieerd. Deze definitie gaat uit van de door netbeheerders meest gebruikte indeling. Andere veelgebruikte bovengrenzen voor middenspanning zijn 35, 50 en 110 kV."@nl ;
-    adms:status status:submitted .
-
 :nk6nx a skos:Concept ;
     skos:broader :kwdt2 ;
     skos:definition "algemeen toegankelijke laadinstallatie"@nl ;
@@ -337,23 +283,6 @@
     skos:definition "bieding redispatch zonder verzoek van de netbeheerder"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "vrije bieding redispatch"@nl ;
-    adms:status status:submitted .
-
-:p8zjw a skos:Concept ;
-    skos:altLabel "HS"@nl ;
-    skos:broader :w8e9z ;
-    skos:definition "spanningsniveau van 110 kV of hoger en lager dan 220 kV"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "hoogspanning"@nl ;
-    skos:scopeNote "Spanningsniveaus worden op verschillende manieren gedefinieerd. Deze definitie gaat uit van de door netbeheerders meest gebruikte indeling. Andere veelgebruikte ondergrenzen voor hoogspanning zijn 1, 25, 35 en 50 kV. Er is niet altijd een bovengrens."@nl ;
-    adms:status status:submitted .
-
-:qi8ja a skos:Concept ;
-    skos:altLabel "LS"@nl ;
-    skos:broader :w8e9z ;
-    skos:definition "spanningsniveau van 1 kV of lager in geval van wisselspanning en 1,5 kV of lager in geval van gelijkspanning"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "laagspanning"@nl ;
     adms:status status:submitted .
 
 :qwxzm a skos:Concept ;
@@ -620,13 +549,6 @@
     skos:prefLabel "elektriciteitsproductie-eenheid"@nl ;
     adms:status status:valid .
 
-:6n8tj a skos:Concept ;
-    skos:broader :fqqa7 ;
-    skos:definition "bereik van overdruk waarin een systeem opereert"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "drukniveau"@nl ;
-    adms:status status:submitted .
-
 :s9htw a skos:Concept ;
     skos:broader :zh4p4 ;
     skos:definition "transportrecht dat niet altijd geldt"@nl ;
@@ -649,13 +571,6 @@
     skos:inScheme <> ;
     skos:prefLabel "laadinstallatie"@nl ;
     adms:status status:valid .
-
-:w8e9z a skos:Concept ;
-    skos:broader :fqqa7 ;
-    skos:definition "elektrisch spanningsbereik waarin een systeem opereert"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "spanningsniveau"@nl ;
-    adms:status status:submitted .
 
 :fqqa7 a skos:Concept ;
     dct:source :ma2mm,
