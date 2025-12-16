@@ -50,10 +50,10 @@ document.addEventListener("DOMContentLoaded", async function() {
             html += `
                 <tr>
                     <td style="text-align:left">
-                        ${item.model_url ? '<a href="' + item.model_url + '">' + item.model_name + '</a>' : item.model_name}
+                        ${item.model_url ? `<a href="${item.model_url}">${item.model_name}</a>` : item.model_name}
                     </td>
                     <td style="text-align:left">
-                        ${item.element_url ? '<a href="' + item.element_url + '">' + item.element_name + '</a>' : item.element_name}
+                        ${item.element_url ? `<a href="${item.element_url}">${item.element_name}</a>` : item.element_name}
                         (${item.element_type})
                     </td>
                 </tr>

@@ -34,10 +34,10 @@ document.addEventListener("DOMContentLoaded", function() {
             if (isActive) cssClass += ' active';
 
             let itemHTML = item.title;
-            if (item.type === 'alias') itemHTML = '<span class="text-grey-dk-000">' + item.title + ' &rarr; </span>' + item.target_label;
+            if (item.type === 'alias') itemHTML = `<span class="text-grey-dk-000">${item.title} &rarr; </span>${item.target_label}`;
 
             listHTML += '<li class="nav-list-item">';
-            listHTML += '<a href="' + baseUrl + item.url + '" class="' + cssClass + '">' + itemHTML + '</a>';
+            listHTML += `<a href="${baseUrl}${item.url}" class="${cssClass}">${itemHTML}</a>`;
             listHTML += '</li>';
             });
 
