@@ -1,7 +1,7 @@
 @echo off
 pushd ..
 
-python -c "" || (
+python -c "" >nul 2>&1 || (
     echo [ERROR] Python is not installed or not in your PATH. Install Python or the portable WinPython.
     exit /b 1
 )
