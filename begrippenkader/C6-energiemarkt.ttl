@@ -367,7 +367,7 @@
 
 :bp9rr a skos:Concept ;
     dct:source :rbf76 ;
-    skos:broader :dwk8c ;
+    skos:broader :zh4p4 ;
     skos:definition "maximale capaciteit die op een aansluiting of groep van aansluitingen mag worden gebruikt"@nl ;
     skos:hiddenLabel "GTV"@nl,
         "gecontracteerd transportvermogen"@nl ;
