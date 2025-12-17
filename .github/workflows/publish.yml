@@ -35,13 +35,13 @@ jobs:
           bundler-cache: true
 
       # --- INSTALL & BUILD VIA INVOKE ---
-      - name: Install Dependencies & Setup
+      - name: Install Python dependencies
         run: |
           pip install -r requirements.txt
-          inv setup
+          python -m spacy download nl_core_news_sm
 
-      - name: Build Site via Invoke
-        run: inv build
+      - name: Build site via Invoke
+        run: invoke build
 
       # --- DEPLOY ---
       - name: Upload artifact
