@@ -1,7 +1,5 @@
 # Begrippenkader
 
-Gebruik `run.cmd` als ontwikkelaar op Windows.
-
 ## Installatie op Windows zonder admin-rechten (portable modus)
 
 1. Maak een map genaamd `tools` in deze map.
