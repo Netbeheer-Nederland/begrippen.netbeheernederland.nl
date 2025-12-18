@@ -81,15 +81,15 @@ class VeldDefinitie:
 # De blauwdruk van een begrippenpagina
 BEGRIPPEN_SCHEMA = {
     # Metadata
-    "code":                 VeldDefinitie("Code", NS["skos"].notation, VeldType.TEKST_ENKEL),
-    "definitie":            VeldDefinitie("Definitie", NS["skos"].definition, VeldType.TEKST_ENKEL, auto_link=True),
-    "uitleg":               VeldDefinitie("Uitleg", NS["rdfs"].comment, VeldType.TEKST_LIJST, auto_link=True),
-    "toelichting":          VeldDefinitie("Toelichting", NS["skos"].scopeNote, VeldType.TEKST_LIJST, auto_link=True),
-    "voorbeeld":            VeldDefinitie("Voorbeeld", NS["skos"].example, VeldType.TEKST_LIJST, auto_link=True),
+    "code":        VeldDefinitie("Code", NS["skos"].notation, VeldType.TEKST_ENKEL),
+    "definitie":   VeldDefinitie("Definitie", NS["skos"].definition, VeldType.TEKST_ENKEL, auto_link=True),
+    "uitleg":      VeldDefinitie("Uitleg", NS["rdfs"].comment, VeldType.TEKST_LIJST, auto_link=True),
+    "toelichting": VeldDefinitie("Toelichting", NS["skos"].scopeNote, VeldType.TEKST_LIJST, auto_link=True),
+    "voorbeeld":   VeldDefinitie("Voorbeeld", NS["skos"].example, VeldType.TEKST_LIJST, auto_link=True),
     
     # Termen
-    "alternatieve_term":    VeldDefinitie("Alternatieve term", NS["skos"].altLabel, VeldType.TEKST_LIJST),
-    "zoekterm":             VeldDefinitie("Zoekterm", NS["skos"].hiddenLabel, VeldType.TEKST_LIJST),
+    "alternatieve_term": VeldDefinitie("Alternatieve term", NS["skos"].altLabel, VeldType.TEKST_LIJST),
+    "zoekterm":          VeldDefinitie("Zoekterm", NS["skos"].hiddenLabel, VeldType.TEKST_LIJST),
     
     # Beheernotities
     "redactionele_notitie": VeldDefinitie("Redactionele notitie", NS["skos"].editorialNote, VeldType.TEKST_LIJST),
@@ -97,25 +97,29 @@ BEGRIPPEN_SCHEMA = {
     "historie_notitie":     VeldDefinitie("Historie notitie", NS["skos"].historyNote, VeldType.TEKST_LIJST),
     
     # Interne relaties
-    "heeft_bovenliggend":   VeldDefinitie("Heeft bovenliggend begrip", NS["skos"].broader, VeldType.LINK_INTERN),
-    "heeft_onderliggend":   VeldDefinitie("Heeft onderliggend begrip", NS["skos"].narrower, VeldType.LINK_INTERN),
-    "is_gerelateerd_aan":   VeldDefinitie("Is gerelateerd aan", NS["skos"].related, VeldType.LINK_INTERN),
-    "is_onderdeel_van":     VeldDefinitie("Is onderdeel van", NS["iso"].broaderPartitive, VeldType.LINK_INTERN),
-    "omvat":                VeldDefinitie("Omvat", NS["iso"].narrowerPartitive, VeldType.LINK_INTERN),
-    "is_specialisatie_van": VeldDefinitie("Is specialisatie van", NS["iso"].broaderGeneric, VeldType.LINK_INTERN),
-    "is_generalisatie_van": VeldDefinitie("Is generalisatie van", NS["iso"].narrowerGeneric, VeldType.LINK_INTERN),
+    "heeft_bovenliggend_begrip": VeldDefinitie("Heeft bovenliggend begrip", NS["skos"].broader, VeldType.LINK_INTERN),
+    "heeft_onderliggend_begrip": VeldDefinitie("Heeft onderliggend begrip", NS["skos"].narrower, VeldType.LINK_INTERN),
+    "is_gerelateerd_aan":        VeldDefinitie("Is gerelateerd aan", NS["skos"].related, VeldType.LINK_INTERN),
+    "is_onderdeel_van":          VeldDefinitie("Is onderdeel van", NS["iso"].broaderPartitive, VeldType.LINK_INTERN),
+    "omvat":                     VeldDefinitie("Omvat", NS["iso"].narrowerPartitive, VeldType.LINK_INTERN),
+    "is_specialisatie_van":      VeldDefinitie("Is specialisatie van", NS["iso"].broaderGeneric, VeldType.LINK_INTERN),
+    "is_generalisatie_van":      VeldDefinitie("Is generalisatie van", NS["iso"].narrowerGeneric, VeldType.LINK_INTERN),
     
     # Externe relaties
-    "exacte_match":         VeldDefinitie("Is exact overeenkomstig", NS["skos"].exactMatch, VeldType.LINK_EXTERN),
-    "nabije_match":         VeldDefinitie("Is vrijwel overeenkomstig", NS["skos"].closeMatch, VeldType.LINK_EXTERN),
-    "brede_match":          VeldDefinitie("Heeft overeenkomstig bovenliggend", NS["skos"].broadMatch, VeldType.LINK_EXTERN),
-    "smalle_match":         VeldDefinitie("Heeft overeenkomstig onderliggend", NS["skos"].narrowMatch, VeldType.LINK_EXTERN),
-    "verwante_match":       VeldDefinitie("Is overeenkomstig verwant", NS["skos"].relatedMatch, VeldType.LINK_EXTERN),
-    "heeft_bron":           VeldDefinitie("Heeft bron", NS["dct"].source, VeldType.LINK_EXTERN),
+    "is_exact_overeenkomstig":           VeldDefinitie("Is exact overeenkomstig", NS["skos"].exactMatch, VeldType.LINK_EXTERN),
+    "is_vrijwel_overeenkomstig":         VeldDefinitie("Is vrijwel overeenkomstig", NS["skos"].closeMatch, VeldType.LINK_EXTERN),
+    "heeft_overeenkomstig_bovenliggend": VeldDefinitie("Heeft overeenkomstig bovenliggend", NS["skos"].broadMatch, VeldType.LINK_EXTERN),
+    "heeft_overeenkomstig_onderliggend": VeldDefinitie("Heeft overeenkomstig onderliggend", NS["skos"].narrowMatch, VeldType.LINK_EXTERN),
+    "is_overeenkomstig_verwant":         VeldDefinitie("Is overeenkomstig verwant", NS["skos"].relatedMatch, VeldType.LINK_EXTERN),
+    "heeft_bron":                        VeldDefinitie("Heeft bron", NS["dct"].source, VeldType.LINK_EXTERN),
 }
 
 # ==============================================================================
 # 3. CORE LOGICA
+# ==============================================================================
+
+# ==============================================================================
+# VERBETERDE VERSIES (Invoegen in je script)
 # ==============================================================================
 
 class ContentLinker:
@@ -125,7 +129,7 @@ class ContentLinker:
         try:
             self.nlp = spacy.load("nl_core_news_sm", disable=["ner", "parser", "lemmatizer"])
         except OSError:
-            print("FOUT: SpaCy model ontbreekt. Run: python -m spacy download nl_core_news_sm")
+            print("FOUT: SpaCy model ontbreekt.")
             sys.exit(1)
             
         self.matcher = Matcher(self.nlp.vocab)
@@ -135,47 +139,67 @@ class ContentLinker:
     def _compile_patterns(self, lookup: Dict[str, dict]):
         for _, data in lookup.items():
             term = data['label']
-            # Maak patronen voor enkelvoud, meervoud en verbuigingen
+            if not term.strip(): continue
+
             doc = self.nlp(term)
             pattern = []
+            
             for token in doc:
+                if not token.text.strip(): continue # Skip lege tokens
+                
+                # Eenvoudige patroon generatie
+                p_opt = {"LOWER": token.text.lower()}
                 if token.pos_ == 'NOUN':
-                    forms = {token.text.lower(), pluralize(token.text).lower()}
-                    pattern.append({"LOWER": {"IN": list(forms)}})
+                    try:
+                        forms = {token.text.lower(), pluralize(token.text).lower()}
+                        p_opt = {"LOWER": {"IN": list(forms)}}
+                    except: pass
                 elif token.pos_ == 'ADJ':
-                    forms = {token.text.lower(), attributive(token.text).lower()}
-                    pattern.append({"LOWER": {"IN": list(forms)}})
-                else:
-                    pattern.append({"LOWER": token.text.lower()})
+                    try:
+                        forms = {token.text.lower(), attributive(token.text).lower()}
+                        p_opt = {"LOWER": {"IN": list(forms)}}
+                    except: pass
+                
+                pattern.append(p_opt)
 
-            self.matcher.add(term, [pattern])
-            self.url_map[term] = f"/doc/{data['reference']}"
+            if pattern:
+                self.matcher.add(term, [pattern])
+                self.url_map[term] = f"/doc/{data['reference']}"
 
     def process(self, text: str, current_page_title: str = "") -> str:
         if not text: return text
+        
         doc = self.nlp(text)
         matches = self.matcher(doc)
         
-        # Sorteer: eerst de match die het vroegst begint, bij gelijke start de langste match
+        # Sorteer: eerst vroegste start, daarna langste match
         matches.sort(key=lambda x: (x[1], -(x[2] - x[1])))
         
         parts = []
-        last_idx = 0
+        last_idx = 0 # Karakterindex
+        
         for match_id, start, end in matches:
-            if start < last_idx: continue # Overlap overslaan
+            span = doc[start:end]
+            
+            if span.start_char < last_idx: continue # Overlap
+            
+            # Checks: lege tekst of zelf-referentie
+            if not span.text.strip(): continue
+            if span.text.strip().lower() == current_page_title.strip().lower(): continue
             
             term = self.nlp.vocab.strings[match_id]
-            if term.lower() == current_page_title.lower(): continue # Self-reference
+            url = self.url_map.get(term)
             
             # Voeg tekst voor de match toe
-            parts.append(text[last_idx:doc[start].idx])
+            parts.append(text[last_idx:span.start_char])
             
-            # Voeg de link toe
-            original = doc[start:end].text
-            url = self.url_map[term]
-            parts.append(f'<a href="{{{{ \'{url}\' | relative_url }}}}" class="auto-link">{original}</a>')
-            
-            last_idx = doc[end-1].idx + len(doc[end-1].text)
+            # Voeg link toe
+            if url:
+                parts.append(f'<a href="{{{{ \'{url}\' | relative_url }}}}" class="auto-link">{span.text}</a>')
+            else:
+                parts.append(span.text)
+                
+            last_idx = span.end_char
             
         parts.append(text[last_idx:])
         return "".join(parts)
@@ -228,12 +252,22 @@ def build_index(graph: Graph) -> Dict[str, dict]:
         if not isinstance(concept, URIRef): continue
         
         uri = str(concept)
-        ref = split_uri(uri)[1]
-        label = str(graph.value(concept, NS["skos"].prefLabel) or ref)
+        # Robuuste reference extractie (ook bij trailing slashes)
+        try:
+            ref = split_uri(uri)[1] or uri.strip('/').split('/')[-1]
+        except:
+            ref = uri.strip('/').split('/')[-1]
+
+        label_val = graph.value(concept, NS["skos"].prefLabel)
+        label = str(label_val) if label_val else ref
         
+        # FILTER: Sla begrippen zonder tekst over (voorkomt lege matches)
+        if not ref or not label or not label.strip():
+            continue
+
         index[uri] = {
             "reference": ref,
-            "label": label,
+            "label": label.strip(),
             "slug": slugify(label)
         }
     return index

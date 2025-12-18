@@ -49,14 +49,15 @@ Onbekende status
 {% macro render_field(key, values) %}
   {% if values %}
     <dt>{{ mapping[key].label }}</dt>
-    {% if mapping[key].type == 'single' %}
+    {% if mapping[key].type.name == 'TEKST_ENKEL' %}
       <dd>{{ values }}</dd>
-    {% elif mapping[key].type == 'list' %}
-      {% for val in values %}<dd>{{ val }}</dd>{% endfor %}
+    {% elif mapping[key].type.name == 'TEKST_LIJST' %}
+      {% for val in values %}
+        <dd>{{ val }}</dd>
+      {% endfor %}
     {% else %}
       {% for link in values %}
         <dd>
-          {# We bouwen de string: {{ 'url' | relative_url }} #}
           <a href="{{ '{{' }} '{{ link.url }}' | relative_url {{ '}}' }}">
             {{ link.label }}
           </a>
