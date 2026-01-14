@@ -1,21 +1,37 @@
+const baseUrl = document.currentScript.getAttribute('data-baseurl');
+
 document.addEventListener("DOMContentLoaded", function() {
-    const baseUrl = window.siteConfig?.baseUrl || "";
-    const sidebar = document.querySelector('.site-nav');
-    const navCategory = document.querySelector('.nav-category');
-    const originalList = document.querySelector('.site-nav > .nav-category + .nav-list');
-    const azList = document.getElementById('skos-az-list');
-    const toggleContainer = document.getElementById('skos-toggle-container');
-    const btn = document.getElementById('btn-toggle-nav');
-    const loadingContainer = document.getElementById('skos-loading-container');
-    const loadingMsg = document.getElementById('skos-loading-msg');
+    const toggleContainer = document.createElement('span');
+    toggleContainer.id = 'skos-toggle-container';
+    toggleContainer.className = 'fw-500';
+    toggleContainer.style.display = 'inline';
+    toggleContainer.appendChild(document.createTextNode(' - '));
+
+    const btnToggle = document.createElement('span');
+    btnToggle.id = 'btn-toggle-nav';
+    btnToggle.className = 'text-purple-000';
+    btnToggle.style.cursor = 'pointer';
+    btnToggle.textContent = 'alfabetisch';
+    toggleContainer.appendChild(btnToggle);
+
+    const azList = document.createElement('ul');
+    azList.className = 'nav-list';
+    azList.style.display = 'none';
+
+    const loadingItem = document.createElement('li');
+    loadingItem.id = 'skos-loading-container';
+    loadingItem.className = 'nav-list-item';
+
+    const loadingMsg = document.createElement('span');
+    loadingMsg.id = 'skos-loading-msg';
+    loadingMsg.className = 'nav-list-link';
+    loadingMsg.textContent = 'Laden...';
+
+    loadingItem.appendChild(loadingMsg);
+    azList.appendChild(loadingItem);
 
     let dataLoaded = false;
     const jsonUrl = `${baseUrl}/assets/json/alphabetical-nav.json`;
-
-    function scrollToActive() {
-        const activeLink = azList.querySelector('.active');
-        if (activeLink) activeLink.scrollIntoView({block: 'center'}); 
-    }
 
     function loadAndRenderData() {
         if (dataLoaded) return;
@@ -25,24 +41,17 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(data => {
             const currentPath = window.location.pathname.replace(/\/$/, "");
 
-            let listHTML = "";
+            azList.innerHTML = data.map(item => {
+                const itemUrlClean = item.url.replace(/\/$/, "");
+                const isActive = item.type !== 'alias' && currentPath.endsWith(itemUrlClean);
+                const cssClass = isActive ? 'nav-list-link active' : 'nav-list-link';
 
-            data.forEach(item => {
-            const itemUrlClean = item.url.replace(/\/$/, "");
-            const isActive = item.type !== 'alias' && currentPath.endsWith(itemUrlClean);
-            let cssClass = 'nav-list-link';
-            if (isActive) cssClass += ' active';
+                let itemHTML = item.title;
+                if (item.type === 'alias') itemHTML = `<span class="text-grey-dk-000">${item.title} &rarr; </span>${item.target_label}`;
 
-            let itemHTML = item.title;
-            if (item.type === 'alias') itemHTML = `<span class="text-grey-dk-000">${item.title} &rarr; </span>${item.target_label}`;
+                return `<li class="nav-list-item"><a href="${baseUrl}${item.url}" class="${cssClass}">${itemHTML}</a></li>`;
+            }).join('');
 
-            listHTML += '<li class="nav-list-item">';
-            listHTML += `<a href="${baseUrl}${item.url}" class="${cssClass}">${itemHTML}</a>`;
-            listHTML += '</li>';
-            });
-
-            azList.innerHTML = listHTML;
-            loadingContainer.style.display = 'none';
             dataLoaded = true;
             scrollToActive();
         })
@@ -54,38 +63,40 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function setNavMode(mode) {
         if (mode === 'az') {
-        originalList.style.display = 'none';
-        azList.style.display = 'block';
-        btn.textContent = 'hiërarchisch';
-        localStorage.setItem('skos-nav-pref', 'az');
-        if (!dataLoaded) {
-            loadAndRenderData(); 
+            treeList.style.display = 'none';
+            azList.style.display = 'block';
+            btnToggle.textContent = 'hiërarchisch';
+            localStorage.setItem('skos-nav-pref', 'az');
+            if (!dataLoaded) loadAndRenderData(); 
+            else scrollToActive();
         } else {
-            scrollToActive();
-        }
-        } else {
-        originalList.style.display = 'block';
-        azList.style.display = 'none';
-        btn.textContent = 'alfabetisch'; 
-        localStorage.setItem('skos-nav-pref', 'tree');
+            treeList.style.display = 'block';
+            azList.style.display = 'none';
+            btnToggle.textContent = 'alfabetisch'; 
+            localStorage.setItem('skos-nav-pref', 'tree');
         }
     }
 
-    if (sidebar && navCategory && originalList && toggleContainer && azList) {
-        navCategory.appendChild(toggleContainer);
-        toggleContainer.style.display = 'inline';
-        sidebar.insertBefore(azList, originalList);
-        originalList.id = "skos-tree-list";
-
-        const savedPref = localStorage.getItem('skos-nav-pref');
-        if (savedPref === 'az') setNavMode('az');
-
-        btn.addEventListener('click', function() {
-        if (azList.style.display === 'none') {
-            setNavMode('az');
-        } else {
-            setNavMode('tree');
-        }
-        });
+    function scrollToActive() {
+        const activeLink = azList.querySelector('.active');
+        if (activeLink) activeLink.scrollIntoView({block: 'center'}); 
     }
+
+    // Main
+    const sidebar = document.querySelector('.site-nav');
+    const navCategory = document.querySelector('.nav-category');
+    const allLists = document.querySelectorAll('.site-nav > .nav-list');
+    const treeList = allLists.length > 0 ? allLists[allLists.length - 1] : null;
+
+    if (!sidebar || !navCategory || !treeList) return;
+
+    navCategory.appendChild(toggleContainer);
+
+    sidebar.insertBefore(azList, treeList);
+
+    btnToggle.addEventListener('click', function() {
+        setNavMode(azList.style.display === 'none' ? 'az' : 'tree');
+    });
+
+    if (localStorage.getItem('skos-nav-pref') === 'az') setNavMode('az');
 });
