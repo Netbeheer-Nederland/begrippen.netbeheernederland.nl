@@ -21,14 +21,13 @@ document.addEventListener("DOMContentLoaded", function() {
     const loadingItem = document.createElement('li');
     loadingItem.id = 'skos-loading-container';
     loadingItem.className = 'nav-list-item';
+    azList.appendChild(loadingItem);
 
     const loadingMsg = document.createElement('span');
     loadingMsg.id = 'skos-loading-msg';
     loadingMsg.className = 'nav-list-link';
     loadingMsg.textContent = 'Laden...';
-
     loadingItem.appendChild(loadingMsg);
-    azList.appendChild(loadingItem);
 
     let dataLoaded = false;
     const jsonUrl = `${baseUrl}/assets/json/alphabetical-nav.json`;
