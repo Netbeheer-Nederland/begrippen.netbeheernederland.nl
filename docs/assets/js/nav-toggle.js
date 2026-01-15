@@ -67,17 +67,18 @@ document.addEventListener("DOMContentLoaded", function() {
             btnToggle.textContent = 'hiërarchisch';
             localStorage.setItem('skos-nav-pref', 'az');
             if (!dataLoaded) loadAndRenderData(); 
-            else scrollToActive();
+            else scrollToActive(azList);
         } else {
             treeList.style.display = 'block';
             azList.style.display = 'none';
             btnToggle.textContent = 'alfabetisch'; 
             localStorage.setItem('skos-nav-pref', 'tree');
+            scrollToActive(treeList);
         }
     }
 
-    function scrollToActive() {
-        const activeLink = azList.querySelector('.active');
+    function scrollToActive(list) {
+        const activeLink = list.querySelector('.active');
         if (activeLink) activeLink.scrollIntoView({block: 'center'}); 
     }
 
