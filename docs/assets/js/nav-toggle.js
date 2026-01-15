@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }).join('');
 
             dataLoaded = true;
-            scrollToActive();
+            scrollToActive(azList);
         })
         .catch(err => {
             loadingMsg.textContent = "Fout bij laden begrippenlijst";
