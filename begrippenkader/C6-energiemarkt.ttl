@@ -58,29 +58,29 @@
     skos:scopeNote "In deze definitie is een aansluiting een gebruiksrecht op één of meer verbindingen met een energienet zoals een appartementsrecht een gebruiksrecht is op één of meer delen van een gebouw. Dit onderscheid tussen de aansluiting als gebruiksrecht en de aansluitverbindingen waar dat recht op rust, maakt de aansluiting eenduidig identificeerbaar."@nl ;
     adms:status status:valid .
 
-:7ff3k a skos:Concept ;
-    dct:source :2i83j ;
-    skos:broader :he89b ;
-    skos:definition "vraag van een marktpartij om iets te doen, niet zijnde een marktprocesverzoek"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "marktverzoek"@nl ;
-    adms:status status:valid .
+# :7ff3k a skos:Concept ;
+#     dct:source :2i83j ;
+#     skos:broader :he89b ;
+#     skos:definition "vraag van een marktpartij om iets te doen, niet zijnde een marktprocesverzoek"@nl ;
+#     skos:inScheme <> ;
+#     skos:prefLabel "marktverzoek"@nl ;
+#     adms:status status:valid .
 
-:7qmcr a skos:Concept ;
-    dct:source :2i83j ;
-    skos:broader :he89b ;
-    skos:definition "gebied waarin de te verwachten behoefte aan transport redelijkerwijs kan leiden tot een structureel tekort aan transportcapaciteit"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "congestiegebied"@nl ;
-    adms:status status:valid .
+# :7qmcr a skos:Concept ;
+#     dct:source :2i83j ;
+#     skos:broader :he89b ;
+#     skos:definition "gebied waarin de te verwachten behoefte aan transport redelijkerwijs kan leiden tot een structureel tekort aan transportcapaciteit"@nl ;
+#     skos:inScheme <> ;
+#     skos:prefLabel "congestiegebied"@nl ;
+#     adms:status status:valid .
 
-:dwdpm a skos:Concept ;
-    dct:source :2i83j ;
-    skos:broader :he89b ;
-    skos:definition "(virtuele) handelsplaats voor energie"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "energiemarkt"@nl ;
-    adms:status status:valid .
+# :dwdpm a skos:Concept ;
+#     dct:source :2i83j ;
+#     skos:broader :he89b ;
+#     skos:definition "(virtuele) handelsplaats voor energie"@nl ;
+#     skos:inScheme <> ;
+#     skos:prefLabel "energiemarkt"@nl ;
+#     adms:status status:valid .
 
 :ihyma a skos:Concept ;
     dct:source :2i83j ;
@@ -90,29 +90,29 @@
     skos:prefLabel "marktactiviteit"@nl ;
     adms:status status:valid .
 
-:n9fke a skos:Concept ;
-    dct:source :2i83j ;
-    skos:broader :he89b ;
-    skos:definition "gewenste energietransport op lange termijn"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "transportbehoefte"@nl ;
-    adms:status status:valid .
+# :n9fke a skos:Concept ;
+#     dct:source :2i83j ;
+#     skos:broader :he89b ;
+#     skos:definition "gewenste energietransport op lange termijn"@nl ;
+#     skos:inScheme <> ;
+#     skos:prefLabel "transportbehoefte"@nl ;
+#     adms:status status:valid .
 
-:rd339 a skos:Concept ;
-    dct:source :2i83j ;
-    skos:broader :he89b ;
-    skos:definition "verwachting van de hoeveelheid energie die moet worden opgeregeld of afgeregeld om het energietransport te handhaven"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "opregel- of afregelbehoefte"@nl ;
-    adms:status status:submitted .
+# :rd339 a skos:Concept ;
+#     dct:source :2i83j ;
+#     skos:broader :he89b ;
+#     skos:definition "verwachting van de hoeveelheid energie die moet worden opgeregeld of afgeregeld om het energietransport te handhaven"@nl ;
+#     skos:inScheme <> ;
+#     skos:prefLabel "opregel- of afregelbehoefte"@nl ;
+#     adms:status status:submitted .
 
-:wyxhe a skos:Concept ;
-    dct:source :2i83j ;
-    skos:broader :he89b ;
-    skos:definition "handeling waarbij de netbeheerder gegevens toegankelijk maakt, buiten de reguliere bedrijfsactiviteiten om"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "netbeheerdataverstrekking"@nl ;
-    adms:status status:valid .
+# :wyxhe a skos:Concept ;
+#     dct:source :2i83j ;
+#     skos:broader :he89b ;
+#     skos:definition "handeling waarbij de netbeheerder gegevens toegankelijk maakt, buiten de reguliere bedrijfsactiviteiten om"@nl ;
+#     skos:inScheme <> ;
+#     skos:prefLabel "netbeheerdataverstrekking"@nl ;
+#     adms:status status:valid .
 
 :xbzft a skos:Concept ;
     dct:source :2i83j ;
@@ -131,21 +131,12 @@
     skos:prefLabel "aansluitlocatie"@nl ;
     adms:status status:valid .
 
-
 :6kkad a skos:Concept ;
     dct:source :wqe42 ;
     skos:broader :zr8ka ;
     skos:definition "eenheid of verzameling van eenheden die elektriciteit opwekt, die ofwel niet-synchroon ofwel via vermogenselektronica via één overdrachtspunt met het energienet is verbonden"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "power park module"@nl ;
-    adms:status status:submitted .
-
-:74crk a skos:Concept ;
-    skos:altLabel "G-CSC"@nl ;
-    skos:broader :erdf4 ;
-    skos:definition "capaciteitssturingscontract tussen een netbeheerder en een CSP met betrekking tot een groep van aansluitingen"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "groepscapaciteitssturingscontract"@nl ;
     adms:status status:submitted .
 
 :7qf3d a skos:Concept ;
@@ -237,14 +228,6 @@
     skos:inScheme <> ;
     skos:prefLabel "maximumcapaciteit"@nl ;
     adms:status status:valid .
-
-:jchwi a skos:Concept ;
-    skos:altLabel "C-CSC"@nl ;
-    skos:broader :erdf4 ;
-    skos:definition "capaciteitssturingscontract met betrekking tot meerdere aansluitingen en met meerdere aangeslotenen als collectieve contractpartij"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "collectief capaciteitssturingscontract"@nl ;
-    adms:status status:submitted .
 
 :jdy8n a skos:Concept ;
     dct:source :rbf76 ;
@@ -497,17 +480,6 @@
     skos:prefLabel "meetinrichting"@nl ;
     adms:status status:valid .
 
-:erdf4 a skos:Concept ;
-    dct:source :xsjys ;
-    skos:altLabel "CSC"@nl ;
-    skos:broader :4nwzw ;
-    skos:definition "afspraak om op verzoek van de netbeheer de energie-uitwisseling op een aansluiting tijdelijk boven of beneden een bepaalde grens te houden, ten behoeve van congestiebeheersing"@nl ;
-    <http://www.w3.org/2004/02/skos/core#hiddenLabel:> "CBC"@nl,
-        "capaciteitsbeperkingscontract"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "capaciteitssturingscontract"@nl ;
-    adms:status status:valid .
-
 :j8cpp a skos:Concept ;
     skos:altLabel "opwek"@nl,
         "productie"@nl,
@@ -592,4 +564,3 @@
     skos:inScheme <> ;
     skos:prefLabel "netbeheerder"@nl ;
     adms:status status:valid .
-

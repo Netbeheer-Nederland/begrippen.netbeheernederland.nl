@@ -9,131 +9,131 @@
 
 :rspee a skos:Concept ;
     dct:source :2i83j ;
-    skos:definition "bedrijfsobjecten die een netbeheerder bestuurt bij het besturen van de ontwikkeling en instandhouding van energienetten"@nl ;
+    skos:definition "stelsel van leidingen en daarmee verbonden hulpmiddelen ten behoeve van transport van energie"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "energienet (domein)"@nl ;
     skos:topConceptOf <> ;
     adms:status status:valid .
 
-:22ksm a skos:Concept ;
-    dct:source :2i83j ;
-    skos:broader :rspee ;
-    skos:definition "(volledig of beperkt) recht op een stuk grond (zakelijk recht), of een toestemming van het bevoegd gezag (vergunning), om in een bepaald tracé netcomponenten in bezit te hebben"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "zakelijk recht of tracévergunning"@nl ;
-    adms:status status:valid .
+# :22ksm a skos:Concept ;
+#     dct:source :2i83j ;
+#     skos:broader :rspee ;
+#     skos:definition "(volledig of beperkt) recht op een stuk grond (zakelijk recht), of een toestemming van het bevoegd gezag (vergunning), om in een bepaald tracé netcomponenten in bezit te hebben"@nl ;
+#     skos:inScheme <> ;
+#     skos:prefLabel "zakelijk recht of tracévergunning"@nl ;
+#     adms:status status:valid .
 
-:2j92n a skos:Concept ;
-    dct:source :2i83j ;
-    skos:broader :rspee ;
-    skos:definition "(technische) toestand waarin een netcomponent verkeert"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "netcomponentconditie"@nl ;
-    adms:status status:valid .
+# :2j92n a skos:Concept ;
+#     dct:source :2i83j ;
+#     skos:broader :rspee ;
+#     skos:definition "(technische) toestand waarin een netcomponent verkeert"@nl ;
+#     skos:inScheme <> ;
+#     skos:prefLabel "netcomponentconditie"@nl ;
+#     adms:status status:valid .
 
-:2pp4t a skos:Concept ;
-    dct:source :2i83j ;
-    skos:broader :rspee ;
-    skos:definition "door de netbeheerder periodiek opgesteld plan waarin alle noodzakelijke uitbreidings- en vervangingsinvesteringen worden beschreven en onderbouwd"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "investeringsplan"@nl ;
-    adms:status status:valid .
+# :2pp4t a skos:Concept ;
+#     dct:source :2i83j ;
+#     skos:broader :rspee ;
+#     skos:definition "door de netbeheerder periodiek opgesteld plan waarin alle noodzakelijke uitbreidings- en vervangingsinvesteringen worden beschreven en onderbouwd"@nl ;
+#     skos:inScheme <> ;
+#     skos:prefLabel "investeringsplan"@nl ;
+#     adms:status status:valid .
 
-:6jeh8 a skos:Concept ;
-    dct:source :2i83j ;
-    skos:broader :rspee ;
-    skos:definition "norm die aangeeft waaraan een bepaald product in technisch opzicht zou moeten voldoen"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "technische bedrijfsstandaard"@nl ;
-    adms:status status:valid .
+# :6jeh8 a skos:Concept ;
+#     dct:source :2i83j ;
+#     skos:broader :rspee ;
+#     skos:definition "norm die aangeeft waaraan een bepaald product in technisch opzicht zou moeten voldoen"@nl ;
+#     skos:inScheme <> ;
+#     skos:prefLabel "technische bedrijfsstandaard"@nl ;
+#     adms:status status:valid .
 
-:6z9jx a skos:Concept ;
-    dct:source :2i83j ;
-    skos:broader :rspee ;
-    skos:definition "bericht aan de netbeheerder van de Dienst voor het kadaster en de openbare registers nadat deze een oriëntatieverzoek of graafmelding heeft ontvangen"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "graafbericht"@nl ;
-    adms:status status:valid .
+# :6z9jx a skos:Concept ;
+#     dct:source :2i83j ;
+#     skos:broader :rspee ;
+#     skos:definition "bericht aan de netbeheerder van de Dienst voor het kadaster en de openbare registers nadat deze een oriëntatieverzoek of graafmelding heeft ontvangen"@nl ;
+#     skos:inScheme <> ;
+#     skos:prefLabel "graafbericht"@nl ;
+#     adms:status status:valid .
 
-:cspjq a skos:Concept ;
-    dct:source :2i83j ;
-    skos:broader :rspee ;
-    skos:definition "omschrijving van de fysieke leefomgeving en het eigenaarschap van de grond, waar rekening mee moet worden gehouden bij de uitvoering van de bedrijfsactiviteiten"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "omgevingsanalyse"@nl ;
-    adms:status status:valid .
+# :cspjq a skos:Concept ;
+#     dct:source :2i83j ;
+#     skos:broader :rspee ;
+#     skos:definition "omschrijving van de fysieke leefomgeving en het eigenaarschap van de grond, waar rekening mee moet worden gehouden bij de uitvoering van de bedrijfsactiviteiten"@nl ;
+#     skos:inScheme <> ;
+#     skos:prefLabel "omgevingsanalyse"@nl ;
+#     adms:status status:valid .
 
-:hmimj a skos:Concept ;
-    dct:source :2i83j ;
-    skos:broader :rspee ;
-    skos:definition "specificatie van eisen aan een netaanpassing en de gekozen oplossingsrichting"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "functioneel ontwerp"@nl ;
-    adms:status status:valid .
+# :hmimj a skos:Concept ;
+#     dct:source :2i83j ;
+#     skos:broader :rspee ;
+#     skos:definition "specificatie van eisen aan een netaanpassing en de gekozen oplossingsrichting"@nl ;
+#     skos:inScheme <> ;
+#     skos:prefLabel "functioneel ontwerp"@nl ;
+#     adms:status status:valid .
 
-:ibkiz a skos:Concept ;
-    dct:source :2i83j ;
-    skos:broader :rspee ;
-    skos:definition "omschrijving van de beoogde activiteiten aan netcomponenten die nodig zijn om het energienet in aanvaardbare conditie te houden"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "onderhouds- of inspectieplan"@nl ;
-    adms:status status:valid .
+# :ibkiz a skos:Concept ;
+#     dct:source :2i83j ;
+#     skos:broader :rspee ;
+#     skos:definition "omschrijving van de beoogde activiteiten aan netcomponenten die nodig zijn om het energienet in aanvaardbare conditie te houden"@nl ;
+#     skos:inScheme <> ;
+#     skos:prefLabel "onderhouds- of inspectieplan"@nl ;
+#     adms:status status:valid .
 
-:mkiwt a skos:Concept ;
-    dct:source :2i83j ;
-    skos:broader :rspee ;
-    skos:definition "goedkeuring door een (natuurlijk of niet-natuurlijk) persoon die beschikt over een aansluiting, aan een marktpartij om gegevens op te vragen of te verstrekken voor een bepaald doel"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "toestemming van aangeslotene"@nl ;
-    adms:status status:valid .
+# :mkiwt a skos:Concept ;
+#     dct:source :2i83j ;
+#     skos:broader :rspee ;
+#     skos:definition "goedkeuring door een (natuurlijk of niet-natuurlijk) persoon die beschikt over een aansluiting, aan een marktpartij om gegevens op te vragen of te verstrekken voor een bepaald doel"@nl ;
+#     skos:inScheme <> ;
+#     skos:prefLabel "toestemming van aangeslotene"@nl ;
+#     adms:status status:valid .
 
-:pgiqj a skos:Concept ;
-    dct:source :2i83j ;
-    skos:broader :rspee ;
-    skos:definition "mate waarin het energienet voldoet aan bepaalde normen"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "netkwaliteit"@nl ;
-    adms:status status:valid .
+# :pgiqj a skos:Concept ;
+#     dct:source :2i83j ;
+#     skos:broader :rspee ;
+#     skos:definition "mate waarin het energienet voldoet aan bepaalde normen"@nl ;
+#     skos:inScheme <> ;
+#     skos:prefLabel "netkwaliteit"@nl ;
+#     adms:status status:valid .
 
-:ps2qr a skos:Concept ;
-    dct:source :2i83j ;
-    skos:broader :rspee ;
-    skos:definition "algemene aanpak die een organisatie hanteert om de ontwikkeling en instandhouding van energienetten te besturen zodat zij haar doelstellingen realiseert"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "netstrategie"@nl ;
-    adms:status status:valid .
+# :ps2qr a skos:Concept ;
+#     dct:source :2i83j ;
+#     skos:broader :rspee ;
+#     skos:definition "algemene aanpak die een organisatie hanteert om de ontwikkeling en instandhouding van energienetten te besturen zodat zij haar doelstellingen realiseert"@nl ;
+#     skos:inScheme <> ;
+#     skos:prefLabel "netstrategie"@nl ;
+#     adms:status status:valid .
 
-:tby28 a skos:Concept ;
-    dct:source :2i83j ;
-    skos:broader :rspee ;
-    skos:definition "delen van het energienet waarvan wordt verwacht dat zij vanwege vanwege afnemende functionaliteit, betrouwbaarheid of veroudering een aanzienlijk risico vormen voor een goede uitvoering van de bij of krachtens de wet aan de netbeheerder toegekende taken"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "kwaliteitsknelpunt"@nl ;
-    adms:status status:valid .
+# :tby28 a skos:Concept ;
+#     dct:source :2i83j ;
+#     skos:broader :rspee ;
+#     skos:definition "delen van het energienet waarvan wordt verwacht dat zij vanwege vanwege afnemende functionaliteit, betrouwbaarheid of veroudering een aanzienlijk risico vormen voor een goede uitvoering van de bij of krachtens de wet aan de netbeheerder toegekende taken"@nl ;
+#     skos:inScheme <> ;
+#     skos:prefLabel "kwaliteitsknelpunt"@nl ;
+#     adms:status status:valid .
 
-:win6i a skos:Concept ;
-    dct:source :2i83j ;
-    skos:broader :rspee ;
-    skos:definition "kwantitatieve analyse om te bepalen of energietransporten in de toekomst met het huidige energienet zijn te realiseren"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "netberekening"@nl ;
-    adms:status status:valid .
+# :win6i a skos:Concept ;
+#     dct:source :2i83j ;
+#     skos:broader :rspee ;
+#     skos:definition "kwantitatieve analyse om te bepalen of energietransporten in de toekomst met het huidige energienet zijn te realiseren"@nl ;
+#     skos:inScheme <> ;
+#     skos:prefLabel "netberekening"@nl ;
+#     adms:status status:valid .
 
-:xjnhe a skos:Concept ;
-    dct:source :2i83j ;
-    skos:broader :rspee ;
-    skos:definition "delen van het energienet waarvan wordt verwacht dat zij vanwege een tekort aan transportcapaciteit of functionaliteit een aanzienlijk risico vormen voor een goede uitvoering van de bij of krachtens de wet aan de netbeheerder toegekende taken"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "capaciteitsknelpunt"@nl ;
-    adms:status status:valid .
+# :xjnhe a skos:Concept ;
+#     dct:source :2i83j ;
+#     skos:broader :rspee ;
+#     skos:definition "delen van het energienet waarvan wordt verwacht dat zij vanwege een tekort aan transportcapaciteit of functionaliteit een aanzienlijk risico vormen voor een goede uitvoering van de bij of krachtens de wet aan de netbeheerder toegekende taken"@nl ;
+#     skos:inScheme <> ;
+#     skos:prefLabel "capaciteitsknelpunt"@nl ;
+#     adms:status status:valid .
 
-:ywmty a skos:Concept ;
-    dct:source :2i83j ;
-    skos:broader :rspee ;
-    skos:definition "fundamentele reden voor het optreden van een of meer storingen"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "storingsgrondoorzaak"@nl ;
-    adms:status status:valid .
+# :ywmty a skos:Concept ;
+#     dct:source :2i83j ;
+#     skos:broader :rspee ;
+#     skos:definition "fundamentele reden voor het optreden van een of meer storingen"@nl ;
+#     skos:inScheme <> ;
+#     skos:prefLabel "storingsgrondoorzaak"@nl ;
+#     adms:status status:valid .
 
 :9sgi2 a skos:Concept ;
     dct:source :2i83j ;
