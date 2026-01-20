@@ -9,7 +9,7 @@
 
 :he89b a skos:Concept ;
     dct:source :2i83j ;
-    skos:definition "bedrijfsobjecten die een netbeheerder bestuurt bij het faciliteren van de energiemarkt"@nl ;
+    skos:definition "stelsel van afspraken en processen dat de uitwisseling van energie tussen marktpartijen faciliteert"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "energiemarkt (domein)"@nl ;
     skos:topConceptOf <> ;
