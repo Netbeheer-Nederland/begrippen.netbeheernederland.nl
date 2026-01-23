@@ -72,13 +72,13 @@
     skos:prefLabel "klantproduct"@nl ;
     adms:status status:valid .
 
-:8k4y6 a skos:Concept ;
-    dct:source :2i83j ;
-    skos:broader :yp6xq ;
-    skos:definition "aaneengesloten periode waarbij interactief informatie wordt uitgewisseld tussen een klant en de netbeheerder"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "klantcontactmoment"@nl ;
-    adms:status status:valid .
+# :8k4y6 a skos:Concept ;
+#     dct:source :2i83j ;
+#     skos:broader :yp6xq ;
+#     skos:definition "aaneengesloten periode waarbij interactief informatie wordt uitgewisseld tussen een klant en de netbeheerder"@nl ;
+#     skos:inScheme <> ;
+#     skos:prefLabel "klantcontactmoment"@nl ;
+#     adms:status status:valid .
 
 # :8qpg4 a skos:Concept ;
 #     dct:source :2i83j ;
@@ -120,13 +120,13 @@
     skos:prefLabel "klantnotificatie"@nl ;
     adms:status status:valid .
 
-# :hnm49 a skos:Concept ;
-#     dct:source :2i83j ;
-#     skos:broader :yp6xq ;
-#     skos:definition "situatie waarbij op illegale wijze energie wordt onttrokken aan het energienet"@nl ;
-#     skos:inScheme <> ;
-#     skos:prefLabel "energiediefstal"@nl ;
-#     adms:status status:valid .
+:hnm49 a skos:Concept ;
+    dct:source :2i83j ;
+    skos:broader :yp6xq ;
+    skos:definition "situatie waarbij op illegale wijze energie wordt onttrokken aan het energienet"@nl ;
+    skos:inScheme <> ;
+    skos:prefLabel "energiediefstal"@nl ;
+    adms:status status:valid .
 
 :st3fm a skos:Concept ;
     dct:source :2i83j ;

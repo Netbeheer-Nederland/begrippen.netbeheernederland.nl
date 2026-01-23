@@ -79,14 +79,6 @@
 #     skos:prefLabel "onderhouds- of inspectieplan"@nl ;
 #     adms:status status:valid .
 
-# :pgiqj a skos:Concept ;
-#     dct:source :2i83j ;
-#     skos:broader :rspee ;
-#     skos:definition "mate waarin het energienet voldoet aan bepaalde normen"@nl ;
-#     skos:inScheme <> ;
-#     skos:prefLabel "netkwaliteit"@nl ;
-#     adms:status status:valid .
-
 # :ps2qr a skos:Concept ;
 #     dct:source :2i83j ;
 #     skos:broader :rspee ;
