@@ -24,20 +24,20 @@
     skos:scopeNote "Iemand die impact ondervindt van bedrijfsactiviteiten van de netbeheerder, beschouwen we ook als klant. In dat geval neemt deze klant bijvoorbeeld informatiediensten af."@nl ;
     adms:status status:valid .
 
+# :n9fke a skos:Concept ;
+#     dct:source :2i83j ;
+#     skos:broader :yp6xq ;
+#     skos:definition "gewenste energietransport op lange termijn"@nl ;
+#     skos:inScheme <> ;
+#     skos:prefLabel "transportbehoefte"@nl ;
+#     adms:status status:valid .
+
 # :4gf4k a skos:Concept ;
 #     dct:source :2i83j ;
 #     skos:broader :yp6xq ;
 #     skos:definition "geldbedrag dat een klant krijgt voor schade aan diens installatie ten gevolge van werkzaamheden in opdracht van de netbeheerder"@nl ;
 #     skos:inScheme <> ;
 #     skos:prefLabel "schadevergoeding"@nl ;
-#     adms:status status:valid .
-
-# :4hn63 a skos:Concept ;
-#     dct:source :2i83j ;
-#     skos:broader :yp6xq ;
-#     skos:definition "verlies van potentiële inkomsten"@nl ;
-#     skos:inScheme <> ;
-#     skos:prefLabel "inkomstenverlies"@nl ;
 #     adms:status status:valid .
 
 # :4jmic a skos:Concept ;
@@ -56,29 +56,29 @@
 #     skos:prefLabel "schadeverhaal"@nl ;
 #     adms:status status:valid .
 
-# :6m4pq a skos:Concept ;
-#     dct:source :2i83j ;
-#     skos:broader :yp6xq ;
-#     skos:definition "toestand waarin er een actieve aansluiting is zonder leveringsovereenkomst"@nl ;
-#     skos:inScheme <> ;
-#     skos:prefLabel "contractloze situatie"@nl ;
-#     adms:status status:valid .
+:6m4pq a skos:Concept ;
+    dct:source :2i83j ;
+    skos:broader :yp6xq ;
+    skos:definition "toestand waarin er een actieve aansluiting is zonder leveringsovereenkomst"@nl ;
+    skos:inScheme <> ;
+    skos:prefLabel "contractloze situatie"@nl ;
+    adms:status status:valid .
 
-# :6qms9 a skos:Concept ;
-#     dct:source :2i83j ;
-#     skos:broader :yp6xq ;
-#     skos:definition "al dan niet tastbaar iets dat de netbeheerder aanbiedt om aan een wens of behoefte te voldoen"@nl ;
-#     skos:inScheme <> ;
-#     skos:prefLabel "klantproduct"@nl ;
-#     adms:status status:valid .
+:6qms9 a skos:Concept ;
+    dct:source :2i83j ;
+    skos:broader :yp6xq ;
+    skos:definition "al dan niet tastbaar iets dat de netbeheerder aanbiedt om aan een wens of behoefte te voldoen"@nl ;
+    skos:inScheme <> ;
+    skos:prefLabel "klantproduct"@nl ;
+    adms:status status:valid .
 
-# :8k4y6 a skos:Concept ;
-#     dct:source :2i83j ;
-#     skos:broader :yp6xq ;
-#     skos:definition "aaneengesloten periode waarbij interactief informatie wordt uitgewisseld tussen een klant en de netbeheerder"@nl ;
-#     skos:inScheme <> ;
-#     skos:prefLabel "klantcontactmoment"@nl ;
-#     adms:status status:valid .
+:8k4y6 a skos:Concept ;
+    dct:source :2i83j ;
+    skos:broader :yp6xq ;
+    skos:definition "aaneengesloten periode waarbij interactief informatie wordt uitgewisseld tussen een klant en de netbeheerder"@nl ;
+    skos:inScheme <> ;
+    skos:prefLabel "klantcontactmoment"@nl ;
+    adms:status status:valid .
 
 # :8qpg4 a skos:Concept ;
 #     dct:source :2i83j ;
@@ -112,13 +112,13 @@
 #     skos:prefLabel "netverliescompensatie"@nl ;
 #     adms:status status:valid .
 
-# :grpae a skos:Concept ;
-#     dct:source :2i83j ;
-#     skos:broader :yp6xq ;
-#     skos:definition "aan een klant gerichte officiële kennisgeving van een verandering in de status van een dienst"@nl ;
-#     skos:inScheme <> ;
-#     skos:prefLabel "klantnotificatie"@nl ;
-#     adms:status status:valid .
+:grpae a skos:Concept ;
+    dct:source :2i83j ;
+    skos:broader :yp6xq ;
+    skos:definition "aan een klant gerichte officiële kennisgeving van een verandering in de status van een dienst"@nl ;
+    skos:inScheme <> ;
+    skos:prefLabel "klantnotificatie"@nl ;
+    adms:status status:valid .
 
 # :hnm49 a skos:Concept ;
 #     dct:source :2i83j ;

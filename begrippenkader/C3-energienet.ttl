@@ -39,13 +39,13 @@
 #     skos:prefLabel "investeringsplan"@nl ;
 #     adms:status status:valid .
 
-# :6jeh8 a skos:Concept ;
-#     dct:source :2i83j ;
-#     skos:broader :rspee ;
-#     skos:definition "norm die aangeeft waaraan een bepaald product in technisch opzicht zou moeten voldoen"@nl ;
-#     skos:inScheme <> ;
-#     skos:prefLabel "technische bedrijfsstandaard"@nl ;
-#     adms:status status:valid .
+:6jeh8 a skos:Concept ;
+    dct:source :2i83j ;
+    skos:broader :rspee ;
+    skos:definition "norm die aangeeft waaraan een bepaald product in technisch opzicht zou moeten voldoen"@nl ;
+    skos:inScheme <> ;
+    skos:prefLabel "technische bedrijfsstandaard"@nl ;
+    adms:status status:valid .
 
 # :6z9jx a skos:Concept ;
 #     dct:source :2i83j ;
@@ -77,14 +77,6 @@
 #     skos:definition "omschrijving van de beoogde activiteiten aan netcomponenten die nodig zijn om het energienet in aanvaardbare conditie te houden"@nl ;
 #     skos:inScheme <> ;
 #     skos:prefLabel "onderhouds- of inspectieplan"@nl ;
-#     adms:status status:valid .
-
-# :mkiwt a skos:Concept ;
-#     dct:source :2i83j ;
-#     skos:broader :rspee ;
-#     skos:definition "goedkeuring door een (natuurlijk of niet-natuurlijk) persoon die beschikt over een aansluiting, aan een marktpartij om gegevens op te vragen of te verstrekken voor een bepaald doel"@nl ;
-#     skos:inScheme <> ;
-#     skos:prefLabel "toestemming van aangeslotene"@nl ;
 #     adms:status status:valid .
 
 # :pgiqj a skos:Concept ;
@@ -119,13 +111,13 @@
 #     skos:prefLabel "netberekening"@nl ;
 #     adms:status status:valid .
 
-# :xjnhe a skos:Concept ;
-#     dct:source :2i83j ;
-#     skos:broader :rspee ;
-#     skos:definition "delen van het energienet waarvan wordt verwacht dat zij vanwege een tekort aan transportcapaciteit of functionaliteit een aanzienlijk risico vormen voor een goede uitvoering van de bij of krachtens de wet aan de netbeheerder toegekende taken"@nl ;
-#     skos:inScheme <> ;
-#     skos:prefLabel "capaciteitsknelpunt"@nl ;
-#     adms:status status:valid .
+:xjnhe a skos:Concept ;
+    dct:source :2i83j ;
+    skos:broader :rspee ;
+    skos:definition "delen van het energienet waarvan wordt verwacht dat zij vanwege een tekort aan transportcapaciteit of functionaliteit een aanzienlijk risico vormen voor een goede uitvoering van de bij of krachtens de wet aan de netbeheerder toegekende taken"@nl ;
+    skos:inScheme <> ;
+    skos:prefLabel "capaciteitsknelpunt"@nl ;
+    adms:status status:valid .
 
 # :ywmty a skos:Concept ;
 #     dct:source :2i83j ;

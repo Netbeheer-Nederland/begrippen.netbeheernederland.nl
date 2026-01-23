@@ -66,13 +66,13 @@
 #     skos:prefLabel "marktverzoek"@nl ;
 #     adms:status status:valid .
 
-# :7qmcr a skos:Concept ;
-#     dct:source :2i83j ;
-#     skos:broader :he89b ;
-#     skos:definition "gebied waarin de te verwachten behoefte aan transport redelijkerwijs kan leiden tot een structureel tekort aan transportcapaciteit"@nl ;
-#     skos:inScheme <> ;
-#     skos:prefLabel "congestiegebied"@nl ;
-#     adms:status status:valid .
+:7qmcr a skos:Concept ;
+    dct:source :2i83j ;
+    skos:broader :he89b ;
+    skos:definition "gebied waarin de te verwachten behoefte aan transport redelijkerwijs kan leiden tot een structureel tekort aan transportcapaciteit"@nl ;
+    skos:inScheme <> ;
+    skos:prefLabel "congestiegebied"@nl ;
+    adms:status status:valid .
 
 # :dwdpm a skos:Concept ;
 #     dct:source :2i83j ;
@@ -89,14 +89,6 @@
     skos:inScheme <> ;
     skos:prefLabel "marktactiviteit"@nl ;
     adms:status status:valid .
-
-# :n9fke a skos:Concept ;
-#     dct:source :2i83j ;
-#     skos:broader :he89b ;
-#     skos:definition "gewenste energietransport op lange termijn"@nl ;
-#     skos:inScheme <> ;
-#     skos:prefLabel "transportbehoefte"@nl ;
-#     adms:status status:valid .
 
 # :rd339 a skos:Concept ;
 #     dct:source :2i83j ;
@@ -120,6 +112,14 @@
     skos:definition "verklaring dat uitgewisselde energie een marktpartij toebehoort"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "energietoerekening"@nl ;
+    adms:status status:valid .
+
+:mkiwt a skos:Concept ;
+    dct:source :2i83j ;
+    skos:broader :he89b ;
+    skos:definition "goedkeuring door een (natuurlijk of niet-natuurlijk) persoon die beschikt over een aansluiting, aan een marktpartij om gegevens op te vragen of te verstrekken voor een bepaald doel"@nl ;
+    skos:inScheme <> ;
+    skos:prefLabel "toestemming van aangeslotene"@nl ;
     adms:status status:valid .
 
 ### Einde NBility ###
