@@ -6,6 +6,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix status: <https://inspire.ec.europa.eu/registry/status/> .
+
 :yp6xq a skos:Concept ;
     dct:source :2i83j ;
     skos:definition "(potentiële) afnemer van een product of dienst van de netbeheerder"@nl ;
@@ -202,7 +203,7 @@
     skos:broader :4nwzw ;
     skos:definition "afspraak tussen een aangeslotene en een netbeheerder betreffende het transport van energie over het energienet van die netbeheerder"@nl ;
     skos:inScheme <> ;
-    skos:prefLabel "transportovereenkomst";
+    skos:prefLabel "transportovereenkomst"@nl;
     adms:status status:submitted .
 
 :4r9bn a skos:Concept ;

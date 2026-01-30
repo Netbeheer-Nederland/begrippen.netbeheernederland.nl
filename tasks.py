@@ -43,7 +43,8 @@ def update(c):
     res = c.run(f"{PYTHON} generate.py {STAGING_DIR}", warn=True)
     
     if res.failed:
-        print("❌ FOUT: Generatie mislukt."); 
+        print("❌ FOUT: Generatie mislukt.")
+        sys.exit(1)
     else:
         print("✅ Data bijgewerkt.")
 
