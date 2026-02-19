@@ -50,9 +50,3 @@ dl.concept-properties dt::after {
     color: $link-color;
     text-decoration-style: solid;
 }
-
-// Footer: to prevent the footer from overlaying the content on mobile devices
-.main-content .site-footer {
-    position: static;
-    padding-left: 0;
-}
