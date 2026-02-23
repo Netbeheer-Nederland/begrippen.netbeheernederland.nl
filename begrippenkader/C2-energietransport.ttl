@@ -7,13 +7,13 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix status: <https://inspire.ec.europa.eu/registry/status/> .
 
-:amkgz a skos:Concept ;
-    dct:source :2i83j ;
-    skos:definition "verplaatsing van energie via een energienet"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "energietransport (domein)"@nl ;
-    skos:topConceptOf <> ;
-    adms:status status:valid .
+# :amkgz a skos:Concept ;
+#     dct:source :2i83j ;
+#     skos:definition "verplaatsing van energie via een energienet"@nl ;
+#     skos:inScheme <> ;
+#     skos:prefLabel "energietransport (domein)"@nl ;
+#     skos:topConceptOf <> ;
+#     adms:status status:valid .
 
 # :4fay3 a skos:Concept ;
 #     dct:source :2i83j ;
@@ -106,10 +106,10 @@
 
 :bpm8z a skos:Concept ;
     dct:source :2i83j ;
-    skos:broader :amkgz ;
     skos:definition "verplaatsing van energie via een energienet"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "energietransport"@nl ;
+    skos:topConceptOf <> ;
     adms:status status:valid .
 
 ### Einde NBility ###

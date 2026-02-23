@@ -7,55 +7,55 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix status: <https://inspire.ec.europa.eu/registry/status/> .
 
-:he89b a skos:Concept ;
-    dct:source :2i83j ;
-    skos:definition "stelsel van afspraken en processen dat de uitwisseling van energie tussen marktpartijen faciliteert"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "energiemarkt (domein)"@nl ;
-    skos:topConceptOf <> ;
-    adms:status status:valid .
+# :he89b a skos:Concept ;
+#     dct:source :2i83j ;
+#     skos:definition "stelsel van afspraken en processen dat de uitwisseling van energie tussen marktpartijen faciliteert"@nl ;
+#     skos:inScheme <> ;
+#     skos:prefLabel "energiemarkt (domein)"@nl ;
+#     skos:topConceptOf <> ;
+#     adms:status status:valid .
 
 :39t96 a skos:Concept ;
     dct:source :2i83j ;
-    skos:broader :he89b ;
     skos:definition "aanbod aan een netbeheerder om het productie- en/of belastingspatroon op een of meer aansluitingen te wijzigen"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "opregel- of afregelaanbod"@nl ;
     skos:scopeNote "In NBility 2.3 bekend als 'opregel- of afregelaanbod', maar verandert in NBility 2.4 naar verwachting van naam."@nl ;
+    skos:topConceptOf <> ;
     adms:status status:submitted .
 
 :hc9px a skos:Concept ;
     dct:source :2i83j ;
-    skos:broader :he89b ;
     skos:definition "partij die een rol vervult binnen de energiemarkt"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "marktpartij"@nl ;
     skos:scopeNote "Onder marktpartijen verstaan we niet de afnemers of toezichthouders van de energiemarkt."@nl ;
+    skos:topConceptOf <> ;
     adms:status status:valid .
 
 :gtj7b a skos:Concept ;
     dct:source :2i83j ;
-    skos:broader :he89b ;
     skos:definition "samenstel van energietechnisch materiaal en leidingen van een aangeslotene, te rekenen na het overdrachtspunt van de aansluiting"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "installatie"@nl ;
+    skos:topConceptOf <> ;
     adms:status status:valid .
 
 :tibcm a skos:Concept ;
     dct:source :2i83j ;
-    skos:broader :he89b ;
     skos:definition "afname dan wel invoeding van energie op een energienet"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "energie-uitwisseling"@nl ;
+    skos:topConceptOf <> ;
     adms:status status:valid .
 
 :gnhiy a skos:Concept ;
     dct:source :2i83j ;
-    skos:broader :he89b ;
     skos:definition "recht op het gebruik van één of meer verbindingen tussen een energienet en een onroerende zaak"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "aansluiting"@nl ;
     skos:scopeNote "In deze definitie is een aansluiting een gebruiksrecht op één of meer verbindingen met een energienet zoals een appartementsrecht een gebruiksrecht is op één of meer delen van een gebouw. Dit onderscheid tussen de aansluiting als gebruiksrecht en de aansluitverbindingen waar dat recht op rust, maakt de aansluiting eenduidig identificeerbaar."@nl ;
+    skos:topConceptOf <> ;
     adms:status status:valid .
 
 # :7ff3k a skos:Concept ;
@@ -68,10 +68,10 @@
 
 :7qmcr a skos:Concept ;
     dct:source :2i83j ;
-    skos:broader :he89b ;
     skos:definition "gebied waarin de te verwachten behoefte aan transport redelijkerwijs kan leiden tot een structureel tekort aan transportcapaciteit"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "congestiegebied"@nl ;
+    skos:topConceptOf <> ;
     adms:status status:valid .
 
 # :dwdpm a skos:Concept ;
@@ -84,10 +84,10 @@
 
 :ihyma a skos:Concept ;
     dct:source :2i83j ;
-    skos:broader :he89b ;
     skos:definition "verrichten van een dienst door een marktpartij op een aansluiting"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "marktactiviteit"@nl ;
+    skos:topConceptOf <> ;
     adms:status status:valid .
 
 # :rd339 a skos:Concept ;
@@ -108,18 +108,18 @@
 
 :xbzft a skos:Concept ;
     dct:source :2i83j ;
-    skos:broader :he89b ;
     skos:definition "verklaring dat uitgewisselde energie een marktpartij toebehoort"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "energietoerekening"@nl ;
+    skos:topConceptOf <> ;
     adms:status status:valid .
 
 :mkiwt a skos:Concept ;
     dct:source :2i83j ;
-    skos:broader :he89b ;
     skos:definition "goedkeuring door een (natuurlijk of niet-natuurlijk) persoon die beschikt over een aansluiting, aan een marktpartij om gegevens op te vragen of te verstrekken voor een bepaald doel"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "toestemming van aangeslotene"@nl ;
+    skos:topConceptOf <> ;
     adms:status status:valid .
 
 ### Einde NBility ###

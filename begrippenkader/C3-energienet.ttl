@@ -7,13 +7,13 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix status: <https://inspire.ec.europa.eu/registry/status/> .
 
-:rspee a skos:Concept ;
-    dct:source :2i83j ;
-    skos:definition "stelsel van leidingen en daarmee verbonden hulpmiddelen ten behoeve van transport van energie"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "energienet (domein)"@nl ;
-    skos:topConceptOf <> ;
-    adms:status status:valid .
+# :rspee a skos:Concept ;
+#     dct:source :2i83j ;
+#     skos:definition "stelsel van leidingen en daarmee verbonden hulpmiddelen ten behoeve van transport van energie"@nl ;
+#     skos:inScheme <> ;
+#     skos:prefLabel "energienet (domein)"@nl ;
+#     skos:topConceptOf <> ;
+#     adms:status status:valid .
 
 # :22ksm a skos:Concept ;
 #     dct:source :2i83j ;
@@ -41,10 +41,10 @@
 
 :6jeh8 a skos:Concept ;
     dct:source :2i83j ;
-    skos:broader :rspee ;
     skos:definition "norm die aangeeft waaraan een bepaald product in technisch opzicht zou moeten voldoen"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "technische bedrijfsstandaard"@nl ;
+    skos:topConceptOf <> ;
     adms:status status:valid .
 
 # :6z9jx a skos:Concept ;
@@ -105,10 +105,10 @@
 
 :xjnhe a skos:Concept ;
     dct:source :2i83j ;
-    skos:broader :rspee ;
     skos:definition "delen van het energienet waarvan wordt verwacht dat zij vanwege een tekort aan transportcapaciteit of functionaliteit een aanzienlijk risico vormen voor een goede uitvoering van de bij of krachtens de wet aan de netbeheerder toegekende taken"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "capaciteitsknelpunt"@nl ;
+    skos:topConceptOf <> ;
     adms:status status:valid .
 
 # :ywmty a skos:Concept ;
@@ -121,35 +121,35 @@
 
 :9sgi2 a skos:Concept ;
     dct:source :2i83j ;
-    skos:broader :rspee ;
     skos:definition "fysiek onderdeel van het energienet"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "netcomponent"@nl ;
+    skos:topConceptOf <> ;
     adms:status status:valid .
 
 :mm4jq a skos:Concept ;
     dct:source :2i83j ;
-    skos:broader :rspee ;
     skos:definition "autorisatie voor de functionele wijziging van een energienet"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "netaanpassingsopdracht"@nl ;
+    skos:topConceptOf <> ;
     adms:status status:valid .
 
 :x9eyk a skos:Concept ;
     dct:source :2i83j ;
-    skos:broader :rspee ;
     skos:definition "autorisatie voor activiteiten die als doel hebben het in een voor de netbeheerder aanvaardbare conditie houden (of terugbrengen) van netcomponenten teneinde de gevraagde mate van functionaliteit te borgen"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "onderhouds- of inspectieopdracht"@nl ;
+    skos:topConceptOf <> ;
     adms:status status:valid .
 
 :a4ejc a skos:Concept ;
     dct:source :2i83j ;
-    skos:broader :rspee ;
     skos:definition "taak of doel van een of meer (geplande) netcomponenten op een bepaalde locatie in het energienet"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "netfunctie"@nl ;
     skos:scopeNote "De netfuncties worden onderscheiden naar primair, secundiar, tertiair en telecom. Primaire netfunctie: een netfunctie voor energietransport. Secundaire netfunctie: een netfunctie voor het meten en/of sturen (inclusief beveiligen) van energietransport. Tertiaire netfunctie: een facilitaire voorziening voor de fysieke bescherming en/of ondersteuning van netcomponenten. Telecomnetfunctie: een onderdeel van een telecommunicatienetwerk bedoeld voor gegevensoverdracht van of naar een netfunctie."@nl ;
+    skos:topConceptOf <> ;
     adms:status status:valid .
 
 ### Einde NBility ###

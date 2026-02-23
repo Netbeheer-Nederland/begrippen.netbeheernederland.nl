@@ -7,21 +7,21 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix status: <https://inspire.ec.europa.eu/registry/status/> .
 
-:yp6xq a skos:Concept ;
-    dct:source :2i83j ;
-    skos:definition "(potentiële) afnemer van een product of dienst van de netbeheerder"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "klant (domein)"@nl ;
-    skos:topConceptOf <> ;
-    adms:status status:valid .
+# :yp6xq a skos:Concept ;
+#     dct:source :2i83j ;
+#     skos:definition "(potentiële) afnemer van een product of dienst van de netbeheerder"@nl ;
+#     skos:inScheme <> ;
+#     skos:prefLabel "klant (domein)"@nl ;
+#     skos:topConceptOf <> ;
+#     adms:status status:valid .
 
 :9gjm2 a skos:Concept ;
     dct:source :2i83j ;
-    skos:broader :yp6xq ;
     skos:definition "(potentiële) afnemer van een product of dienst van de netbeheerder"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "klant"@nl ;
     skos:scopeNote "Iemand die impact ondervindt van bedrijfsactiviteiten van de netbeheerder, beschouwen we ook als klant. In dat geval neemt deze klant bijvoorbeeld informatiediensten af."@nl ;
+    skos:topConceptOf <> ;
     adms:status status:valid .
 
 # :n9fke a skos:Concept ;
@@ -58,18 +58,18 @@
 
 :6m4pq a skos:Concept ;
     dct:source :2i83j ;
-    skos:broader :yp6xq ;
     skos:definition "toestand waarin er een actieve aansluiting is zonder leveringsovereenkomst"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "contractloze situatie"@nl ;
+    skos:topConceptOf <> ;
     adms:status status:valid .
 
 :6qms9 a skos:Concept ;
     dct:source :2i83j ;
-    skos:broader :yp6xq ;
     skos:definition "al dan niet tastbaar iets dat de netbeheerder aanbiedt om aan een wens of behoefte te voldoen"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "klantproduct"@nl ;
+    skos:topConceptOf <> ;
     adms:status status:valid .
 
 # :8k4y6 a skos:Concept ;
@@ -114,35 +114,35 @@
 
 :grpae a skos:Concept ;
     dct:source :2i83j ;
-    skos:broader :yp6xq ;
     skos:definition "aan een klant gerichte officiële kennisgeving van een verandering in de status van een dienst"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "klantnotificatie"@nl ;
+    skos:topConceptOf <> ;
     adms:status status:valid .
 
 :hnm49 a skos:Concept ;
     dct:source :2i83j ;
-    skos:broader :yp6xq ;
     skos:definition "situatie waarbij op illegale wijze energie wordt onttrokken aan het energienet"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "energiediefstal"@nl ;
+    skos:topConceptOf <> ;
     adms:status status:valid .
 
 :st3fm a skos:Concept ;
     dct:source :2i83j ;
-    skos:broader :yp6xq ;
     skos:definition "vraag van een klant om iets te doen of te laten"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "klantverzoek"@nl ;
     skos:scopeNote "Hoewel een klacht slechts een uiting is van ontevredenheid, beschouwen we deze als een klantverzoek omdat de netbeheerder hier binnen een bepaalde termijn opvolging aan moet geven."@nl ;
+    skos:topConceptOf <> ;
     adms:status status:valid .
 
 :4nwzw a skos:Concept ;
     dct:source :2i83j ;
-    skos:broader :yp6xq ;
     skos:definition "afspraak tussen een klant en de netbeheerder over wat ze met elkaar of voor elkaar zullen gaan doen of laten"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "klantovereenkomst"@nl ;
+    skos:topConceptOf <> ;
     adms:status status:valid .
 
 ### Einde NBility ###

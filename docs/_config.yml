@@ -49,6 +49,3 @@ search:
 
 plugins:
   - jekyll-redirect-from
-
-mermaid:
-  version: 9.1.3
