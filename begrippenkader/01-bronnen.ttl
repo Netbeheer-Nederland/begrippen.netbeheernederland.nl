@@ -7,9 +7,17 @@
     dct:title "Begrippencode gas"@nl ;
     foaf:page <https://wetten.overheid.nl/jci1.3:c:BWBR0037923> .
 
+:tm373 a foaf:Document ;
+    dct:title "Begrippencode gas TSB en DSB"@nl ;
+    foaf:page <https://wetten.overheid.nl/jci1.3:c:BWBR0052329> .
+
 :rbf76 a foaf:Document ;
     dct:title "Begrippencode elektriciteit"@nl ;
     foaf:page <https://wetten.overheid.nl/jci1.3:c:BWBR0037938> .
+
+:qyewj a foaf:Document ;
+    dct:title "Begrippencode elektriciteit 2026"@nl ;
+    foaf:page <https://wetten.overheid.nl/jci1.3:c:BWBR0052320> .
 
 :kweqa a foaf:Document ;
     dct:title "Elektriciteitswet 1998"@nl ;

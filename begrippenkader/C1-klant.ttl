@@ -207,9 +207,9 @@
     adms:status status:submitted .
 
 :4r9bn a skos:Concept ;
-    dct:source :rbf76 ;
+    dct:source :qyewj ;
     skos:broader :dj9xa ;
-    skos:definition "transportovereenkomst met meer dan één aangeslotene en met betrekking tot meer dan één aansluiting"@nl ;
+    skos:definition "transportovereenkomst met twee of meer aangeslotenen gezamenlijk, met betrekking tot twee of meer aansluitingen"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "groepstransportovereenkomst"@nl ;
     adms:status status:submitted .

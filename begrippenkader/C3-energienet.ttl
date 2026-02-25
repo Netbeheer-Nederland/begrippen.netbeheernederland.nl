@@ -165,7 +165,7 @@
     adms:status status:valid .
 
 :2whwi a skos:Concept ;
-    dct:source :rbf76 ;
+    dct:source :qyewj ;
     skos:broader :dwk8c ;
     skos:definition "maximale capaciteit die een energienet aankan, met inachtneming van de van toepassing zijnde netontwerpcriteria en operationele veiligheidsgrenzen"@nl ;
     skos:inScheme <> ;
@@ -174,7 +174,7 @@
     adms:status status:valid .
 
 :7bs28 a skos:Concept ;
-    dct:source :rbf76 ;
+    dct:source :qyewj ;
     skos:broader :dwk8c ;
     skos:definition "transportcapaciteit nodig om transportovereenkomsten uit te voeren"@nl ;
     skos:editorialNote "De definitie uit de Begrippencode elektriciteit is verfijnd om nieuwe transportverzoeken van reeds gecontracteerde aangeslotenen uit te sluiten. Dit is in lijn met de Handleiding congestierapporten (ACM, 2023)."@nl ;
@@ -186,7 +186,7 @@
     adms:status status:valid .
 
 :7n44w a skos:Concept ;
-    dct:source :rbf76 ;
+    dct:source :qyewj ;
     skos:broader :dwk8c ;
     skos:definition "transportcapaciteit nodig om transportverzoeken uit te voeren"@nl ;
     skos:editorialNote "De definitie uit de Begrippencode elektriciteit is verfijnd om de vraag naar transport waar reeds een transportovereenkomst voor bestaat uit te sluiten en om de suggestie weg te nemen dat de waarden niet optelbaar zijn. Dit is in lijn met de Handleiding congestierapporten (ACM, 2023)."@nl ;
@@ -308,7 +308,7 @@
     adms:status status:submitted .
 
 :9p2c3 a skos:Concept ;
-    dct:source :ma2mm ;
+    dct:source :tm373 ;
     skos:altLabel "HD"@nl ;
     skos:broader :6n8tj ;
     skos:definition "drukniveau hoger dan 200 mbar en lager dan of gelijk aan 8 bar"@nl ;
@@ -317,7 +317,7 @@
     adms:status status:submitted .
 
 :anskq a skos:Concept ;
-    dct:source :ma2mm ;
+    dct:source :tm373 ;
     skos:altLabel "EHD"@nl ;
     skos:broader :6n8tj ;
     skos:definition "drukniveau hoger dan 8 bar"@nl ;
@@ -326,7 +326,7 @@
     adms:status status:submitted .
 
 :f3ssk a skos:Concept ;
-    dct:source :ma2mm ;
+    dct:source :tm373 ;
     skos:altLabel "LD"@nl ;
     skos:broader :6n8tj ;
     skos:definition "drukniveau van 200 mbar of lager"@nl ;

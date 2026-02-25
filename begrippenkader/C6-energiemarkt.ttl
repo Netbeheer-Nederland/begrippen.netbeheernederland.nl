@@ -147,7 +147,7 @@
     adms:status status:submitted .
 
 :97gd7 a skos:Concept ;
-    dct:source :rbf76 ;
+    dct:source :qyewj ;
     skos:broader :wmkrz ;
     skos:definition "eenheid die actief vermogen vanuit het net kan afnemen en in het net kan injecteren door omzetting van elektrische energie in een vorm van energie die kan worden opgeslagen, de opslag van die energie en de daaropvolgende omzetting van die energie in elektrische energie"@nl ;
     skos:inScheme <> ;
@@ -180,7 +180,7 @@
     foaf:page :xsjys .
 
 :akq32 a skos:Concept ;
-    dct:source :rbf76 ;
+    dct:source :qyewj ;
     skos:altLabel "slimme meter"@nl ;
     skos:broader :rnny7 ;
     skos:definition "meetinrichting die voldoet aan het Besluit op afstand uitleesbare meetinrichtingen"@nl ;
@@ -205,7 +205,7 @@
     adms:status status:submitted .
 
 :e2ifi a skos:Concept ;
-    dct:source :rbf76 ;
+    dct:source :qyewj ;
     skos:altLabel "SJA"@nl ;
     skos:broader :y4yex ;
     skos:definition "verwachte afname op een aansluiting bij gestandaardiseerde condities en op basis van een genormaliseerd jaar"@nl ;
@@ -230,7 +230,7 @@
     adms:status status:valid .
 
 :jdy8n a skos:Concept ;
-    dct:source :rbf76 ;
+    dct:source :qyewj ;
     skos:altLabel "SJI"@nl ;
     skos:broader :y4yex ;
     skos:definition "verwachte invoeding op een aansluiting bij gestandaardiseerde condities en op basis van een genormaliseerd jaar"@nl ;
@@ -247,6 +247,7 @@
     adms:status status:submitted .
 
 :mkiqp a skos:Concept ;
+    dct:source :6cpic ;
     skos:altLabel "BRP"@nl ;
     skos:broader :hc9px ;
     skos:definition "natuurlijk persoon of rechtspersoon die verantwoordelijk is voor de onbalans die hij, of degene die hij vertegenwoordigt, veroorzaakt in het energienet en die door de netbeheerder als balancerinsverantwoordelijke is toegelaten"@nl ;
@@ -304,9 +305,9 @@
     adms:status status:valid .
 
 :x8xgk a skos:Concept ;
-    dct:source :rbf76 ;
+    dct:source :qyewj ;
     skos:broader :fqqa7 ;
-    skos:definition "door aangeslotene gevraagde en door de netbeheerder ter beschikking gestelde hoeveelheid energie per tijdseenheid die via het overdrachtspunt van een aansluiting kan worden uitgewisseld"@nl ;
+    skos:definition "door aangeslotene gevraagde en door de netbeheerder ter beschikking gestelde hoeveelheid energie per tijdseenheid die via het overdrachtspunt van een aansluiting of netkoppeling kan worden uitgewisseld"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "aansluitcapaciteit"@nl ;
     adms:status status:valid .
@@ -330,7 +331,7 @@
     adms:status status:valid .
 
 :6hz4b a skos:Concept ;
-    dct:source :rbf76 ;
+    dct:source :qyewj ;
     skos:broader :tibcm ;
     skos:definition "uren van de dag waarvoor, in geval van een meetinrichting met dubbel telwerk, de met het energienet uitgewisselde energie wordt geregistreerd door het laagtelwerk"@nl ;
     skos:inScheme <> ;
@@ -338,20 +339,20 @@
     adms:status status:valid .
 
 :apcsk a skos:Concept ;
+    dct:source :qyewj ;
+    skos:altLabel "CSP"@nl ;
     skos:broader :hc9px ;
-    skos:definition "partij die namens of met instemming van een aangeslotene congestiemanagementdiensten levert aan een netbeheerder"@nl ;
-    skos:hiddenLabel "congestiebeheersdienstverlener"@nl,
-        "congestiemanagementdienstverlener"@nl ;
+    skos:definition "partij die congestiebeheersdiensten levert aan een netbeheerder"@nl ;
+    skos:hiddenLabel "congestiemanagementdienstverlener"@nl ;
     skos:inScheme <> ;
-    skos:prefLabel "CSP"@nl ;
+    skos:prefLabel "congestiebeheersdienstverlener"@nl ;
     skos:scopeNote "CSP staat voor congestion service provider."@nl ;
-    adms:status status:valid ;
-    foaf:page :rbf76 .
+    adms:status status:valid .
 
 :bp9rr a skos:Concept ;
-    dct:source :rbf76 ;
+    dct:source :qyewj ;
     skos:broader :zh4p4 ;
-    skos:definition "maximale capaciteit die op een aansluiting of groep van aansluitingen mag worden gebruikt"@nl ;
+    skos:definition "maximale capaciteit die op een aansluiting, groep van aansluitingen of netkoppeling mag worden gebruikt"@nl ;
     skos:hiddenLabel "GTV"@nl,
         "gecontracteerd transportvermogen"@nl ;
     skos:inScheme <> ;
@@ -388,11 +389,12 @@
     adms:status status:submitted .
 
 :fprn3 a skos:Concept ;
-    dct:source :rbf76 ;
+    dct:source :qyewj ;
     skos:broader :tc4xn ;
+    skos:hiddenLabel "laagtelwerk"@nl ;
     skos:definition "telwerk van een meetinrichting met twee of meer telwerken dat gebruikt wordt of kan worden voor de bepaling van de met het energienet uitgewisselde energie tijdens laaguren"@nl ;
     skos:inScheme <> ;
-    skos:prefLabel "laagtelwerk"@nl ;
+    skos:prefLabel "laag telwerk"@nl ;
     adms:status status:valid .
 
 :kqpi3 a skos:Concept ;
@@ -440,7 +442,7 @@
     adms:status status:valid .
 
 :tc4xn a skos:Concept ;
-    dct:source :rbf76 ;
+    dct:source :qyewj ;
     skos:broader :877a7 ;
     skos:definition "samenstel van cijferrollen dan wel een dataregister waarin de totale hoeveelheid uitgewisselde energie wordt vastgelegd"@nl ;
     skos:inScheme <> ;
@@ -545,11 +547,10 @@
     adms:status status:valid .
 
 :fqqa7 a skos:Concept ;
-    dct:source :ma2mm,
-        :rbf76 ;
+    dct:source :6cpic ;
     skos:altLabel "aansluitpunt"@nl ;
     skos:broader :gnhiy ;
-    skos:definition "overeengekomen grens waarop de verantwoordelijkheid overgaat van het energienet van de netbeheerder naar de installatie van de aangeslotene, of tussen twee energienetten"@nl ;
+    skos:definition "overeengekomen grens waarop de verantwoordelijkheid overgaat van het energienet van de netbeheerder naar de installatie van de aangeslotene, naar een directe lijn of naar een ander energienet"@nl ;
     skos:editorialNote "Ten opzichte van de regelgeving, waarin het overdrachtspunt als een ‘fysiek punt’ wordt opgevat, biedt dit begrippenkader een preciezere definitie: een overeengekomen grens voor een eenduidige verantwoordelijkheidsverdeling, los van de fysieke realisatie."@nl ;
     skos:inScheme <> ;
     skos:prefLabel "overdrachtspunt"@nl ;
