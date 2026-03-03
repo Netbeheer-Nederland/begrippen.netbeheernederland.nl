@@ -11,7 +11,7 @@ We nemen een begrip alleen op als deze binnen de context van de netbeheerder een
 
 Elk begrip moet uniek zijn binnen de context van de netbeheerder, wat betekent dat er per (voorkeurs)term maar één definitie bestaat. Worden in het dagelijkse spraakgebruik meerdere definities gehanteerd, dan geldt de volgende volgorde van gewicht:
 
-1. definities uit regelgeving krijgen voorrang (zie Harmonisatie)
+1. definities uit regelgeving krijgen voorrang (zie [_Externe begrippen_](externe_begrippen))
 2. daarna prioriteren wij de buitenstaander boven het interne taalgebruik
 3. intern krijgen de definities die verband houden met onze kernactiviteiten voorrang
 4. als laatste op deze ladder staat de generieke binnenwereld van de netbeheerder (IT, HR, Finance)
