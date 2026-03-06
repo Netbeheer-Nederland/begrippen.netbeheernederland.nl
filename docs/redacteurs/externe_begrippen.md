@@ -12,5 +12,6 @@ Deze keuze komt met een aantal significante voordelen:
 * Ieder begrip in ons begrippenkader heeft de basis-URI van ons begrippenkader. Dit encodeert het feit dat er één eigenaar is en voorkomt verwarring bij minder ingewijden in Linked Data-principes.
 * Het volgen van elk van de begrip-URI's leidt gebruikers te allen tijde tot de documentatiesite van _ons_ begrippenkader. Dit geeft een voorspelbare ervaring en maakt ons niet afhankelijk van de stabiliteit en kwaliteit van externe websites.
 * Gebruikers zien altijd het begrip in context van ons begrippenkader, inclusief daarin toegevoegde beweringen over de begrippen en kleine stilistische aanpassingen aan de teksten.
+* Indien het externe begrip geen URI heeft, weerhoudt dit ons er niet van het begrip op te kunnen nemen in ons kader. De harmonisatierelaties kunnen dan worden vervangen door andere metadata zoals bronvermelding.
 
 Een aanzienlijk nadeel t.o.v. de [_hergebruikstrategie_](https://docs.geostandaarden.nl/nl-sbb/nl-sbb/#hergebruik) is dat voortdurend onderhoud moet worden gepleegd om wijzigingen aan de externe begrippen te verwerken in de eigen begrippen. Dit vangen we af in processen en we accepteren het risico dat er momenten kunnen zijn waarop we niet geheel up to date zijn.
