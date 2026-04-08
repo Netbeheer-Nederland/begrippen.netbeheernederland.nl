@@ -17,7 +17,7 @@ from pyshacl import validate
 from pattern.nl import pluralize, attributive
 
 # ==============================================================================
-# 1. OMGEVING & CONFIGURATIE
+# OMGEVING & CONFIGURATIE
 # ==============================================================================
 
 @dataclass
@@ -45,6 +45,8 @@ class ProjectPaths:
     @property
     def output_json(self) -> str: return os.path.join(self.root, "begrippen.json")
 
+PUBLIC_STATUSES = {"valid", "submitted"}
+
 # Namespaces
 NS = {
     "skos": SKOS,
@@ -62,7 +64,7 @@ TTL_CONFIG = {
 }
 
 # ==============================================================================
-# 2. SCHEMA DEFINITIE
+# SCHEMA DEFINITIE
 # ==============================================================================
 
 class VeldType(Enum):
@@ -115,7 +117,7 @@ BEGRIPPEN_SCHEMA = {
 }
 
 # ==============================================================================
-# 3. CORE LOGICA
+# CORE LOGICA
 # ==============================================================================
 
 class ContentLinker:
@@ -238,7 +240,7 @@ EXTRACTORS = {
 }
 
 # ==============================================================================
-# 4. DATA PROCESSING
+# DATA PROCESSING
 # ==============================================================================
 
 def build_index(graph: Graph) -> Dict[str, dict]:
@@ -268,10 +270,22 @@ def build_index(graph: Graph) -> Dict[str, dict]:
         }
     return index
 
+def filter_public_index(graph: Graph, lookup: dict) -> dict:
+    """Beperkt de lookup tot begrippen die publiek zijn."""
+    filtered = {}
+
+    for uri, meta in lookup.items():
+        concept = URIRef(uri)
+        status = str(graph.value(concept, NS["adms"].status)).split("/")[-1] if graph.value(concept, NS["adms"].status) else None
+        if status in PUBLIC_STATUSES: filtered[uri] = meta
+
+    return filtered
+
 def process_concept(graph: Graph, concept: URIRef, lookup: dict, linker: ContentLinker) -> dict:
     """Verzamelt alle data en past autolinking toe."""
     uri = str(concept)
     meta = lookup[uri]
+    status = str(graph.value(concept, NS["adms"].status)).split("/")[-1] if graph.value(concept, NS["adms"].status) else None
     
     data = {
         "uri": uri,
@@ -279,8 +293,9 @@ def process_concept(graph: Graph, concept: URIRef, lookup: dict, linker: Content
         "voorkeursterm": meta["label"],
         "slug": meta["slug"],
         "permalink": f"/doc/{meta['reference']}",
-        "status": str(graph.value(concept, NS["adms"].status)).split("/")[-1] if graph.value(concept, NS["adms"].status) else None,
-        "mapping": BEGRIPPEN_SCHEMA, # Voor de template
+        "status": status,
+        "public": status in PUBLIC_STATUSES,
+        "mapping": BEGRIPPEN_SCHEMA,
         "parent_label": None
     }
 
@@ -312,13 +327,14 @@ def ensure_dir(path: str):
     os.makedirs(os.path.dirname(path), exist_ok=True)
 
 # ==============================================================================
-# 5. GENERATOREN
+# GENERATOREN
 # ==============================================================================
 
 def generate_site(graph: Graph, paths: ProjectPaths):
     env = Environment(loader=FileSystemLoader(paths.templates))
-    lookup = build_index(graph)
-    linker = ContentLinker(lookup)
+    full_index = build_index(graph)
+    public_index = filter_public_index(graph, full_index)
+    linker = ContentLinker(public_index)
     
     # Homepage
     print(f" - Homepage: {paths.output_homepage}")
@@ -337,7 +353,7 @@ def generate_site(graph: Graph, paths: ProjectPaths):
     
     for concept in graph.subjects(RDF.type, NS["skos"].Concept):
         if not isinstance(concept, URIRef): continue
-        data = process_concept(graph, concept, lookup, linker)
+        data = process_concept(graph, concept, full_index, linker)
         
         with open(os.path.join(paths.output_pages, f"{data['reference']}.md"), "w", encoding="utf-8") as f:
             f.write(template.render(data))
@@ -347,11 +363,9 @@ def generate_site(graph: Graph, paths: ProjectPaths):
     template = env.get_template("alias.md.jinja2")
     ensure_dir(paths.output_aliases + "/")
     
-    for concept in graph.subjects(RDF.type, NS["skos"].Concept):
-        uri = str(concept)
-        if uri not in lookup: continue
-        
-        target = lookup[uri]
+    for uri, target in public_index.items():
+        concept = URIRef(uri)
+
         for alias in graph.objects(concept, NS["skos"].altLabel):
             slug = f"{slugify(str(alias))}-{target['reference']}"
             with open(os.path.join(paths.output_aliases, f"{slug}.md"), "w", encoding="utf-8") as f:
@@ -360,7 +374,7 @@ def generate_site(graph: Graph, paths: ProjectPaths):
     # JSON alfabetische nav
     print(f" - Index: {paths.output_nav}")
     index_items = []
-    for uri, data in lookup.items():
+    for uri, data in public_index.items():
         url = f"/doc/{data['reference']}"
         # Voorkeursterm
         index_items.append({"title": data['label'], "url": url, "type": "concept", "sort": get_normalized_sort_key(data['label'])})
@@ -380,12 +394,12 @@ def generate_site(graph: Graph, paths: ProjectPaths):
     graph.serialize(destination=paths.output_ttl, format="turtle", base=TTL_CONFIG["base"])
 
     # Downloadable lookup JSON
-    lookup_export = {uri.replace(TTL_CONFIG["prefix"], ""): {"label": data["label"], "uri": uri} for uri, data in lookup.items()}
+    lookup_export = {uri.replace(TTL_CONFIG["prefix"], ""): {"label": data["label"], "uri": uri} for uri, data in full_index.items()}
     with open(paths.output_json, "w", encoding="utf-8") as f:
         json.dump(lookup_export, f, indent=2)
 
 # ==============================================================================
-# 6. MAIN EXECUTION
+# MAIN EXECUTION
 # ==============================================================================
 
 def main():

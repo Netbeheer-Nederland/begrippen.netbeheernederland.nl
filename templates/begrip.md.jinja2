@@ -1,5 +1,9 @@
 ---
 title: {{ voorkeursterm }}
+{% if not public -%}
+nav_exclude: true
+search_exclude: true
+{%- endif %}
 {% if parent_label %}parent: {{ parent_label }}{% endif %}
 permalink: {{ permalink }}
 redirect_from:

@@ -220,10 +220,10 @@
 
 :mi3n3 a skos:Concept ;
     skos:broader :a4ejc ;
-    skos:definition "object bestemd om daardoorheen of daarlangs energie te transporteren"@nl ;
+    skos:definition "mogelijkheid om energie te transporteren"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "verbinding"@nl ;
-    adms:status status:valid .
+    adms:status status:retired .
 
 :n4sk8 a skos:Concept ;
     skos:broader :a4ejc ;
