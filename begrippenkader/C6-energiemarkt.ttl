@@ -7,14 +7,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix status: <https://inspire.ec.europa.eu/registry/status/> .
 
-# :he89b a skos:Concept ;
-#     dct:source :2i83j ;
-#     skos:definition "stelsel van afspraken en processen dat de uitwisseling van energie tussen marktpartijen faciliteert"@nl ;
-#     skos:inScheme <> ;
-#     skos:prefLabel "energiemarkt (domein)"@nl ;
-#     skos:topConceptOf <> ;
-#     adms:status status:valid .
-
 :39t96 a skos:Concept ;
     dct:source :2i83j ;
     skos:definition "aanbod aan een netbeheerder om het productie- en/of belastingspatroon op een of meer aansluitingen te wijzigen"@nl ;
@@ -58,14 +50,6 @@
     skos:topConceptOf <> ;
     adms:status status:valid .
 
-# :7ff3k a skos:Concept ;
-#     dct:source :2i83j ;
-#     skos:broader :he89b ;
-#     skos:definition "vraag van een marktpartij om iets te doen, niet zijnde een marktprocesverzoek"@nl ;
-#     skos:inScheme <> ;
-#     skos:prefLabel "marktverzoek"@nl ;
-#     adms:status status:valid .
-
 :7qmcr a skos:Concept ;
     dct:source :2i83j ;
     skos:definition "gebied waarin de te verwachten behoefte aan transport redelijkerwijs kan leiden tot een structureel tekort aan transportcapaciteit"@nl ;
@@ -74,14 +58,6 @@
     skos:topConceptOf <> ;
     adms:status status:valid .
 
-# :dwdpm a skos:Concept ;
-#     dct:source :2i83j ;
-#     skos:broader :he89b ;
-#     skos:definition "(virtuele) handelsplaats voor energie"@nl ;
-#     skos:inScheme <> ;
-#     skos:prefLabel "energiemarkt"@nl ;
-#     adms:status status:valid .
-
 :ihyma a skos:Concept ;
     dct:source :2i83j ;
     skos:definition "verrichten van een dienst door een marktpartij op een aansluiting"@nl ;
@@ -89,22 +65,6 @@
     skos:prefLabel "marktactiviteit"@nl ;
     skos:topConceptOf <> ;
     adms:status status:valid .
-
-# :rd339 a skos:Concept ;
-#     dct:source :2i83j ;
-#     skos:broader :he89b ;
-#     skos:definition "verwachting van de hoeveelheid energie die moet worden opgeregeld of afgeregeld om het energietransport te handhaven"@nl ;
-#     skos:inScheme <> ;
-#     skos:prefLabel "opregel- of afregelbehoefte"@nl ;
-#     adms:status status:submitted .
-
-# :wyxhe a skos:Concept ;
-#     dct:source :2i83j ;
-#     skos:broader :he89b ;
-#     skos:definition "handeling waarbij de netbeheerder gegevens toegankelijk maakt, buiten de reguliere bedrijfsactiviteiten om"@nl ;
-#     skos:inScheme <> ;
-#     skos:prefLabel "netbeheerdataverstrekking"@nl ;
-#     adms:status status:valid .
 
 :xbzft a skos:Concept ;
     dct:source :2i83j ;
