@@ -95,7 +95,7 @@
     dct:source :xsjys ;
     skos:altLabel "CSC"@nl ;
     skos:broader :4nwzw ;
-    skos:definition "afspraak om op verzoek van de netbeheer de energie-uitwisseling op een aansluiting tijdelijk boven of beneden een bepaalde grens te houden, ten behoeve van congestiebeheersing"@nl ;
+    skos:definition "afspraak om op verzoek van de netbeheerder de energie-uitwisseling op een aansluiting tijdelijk boven of beneden een bepaalde grens te houden, ten behoeve van congestiebeheersing"@nl ;
     <http://www.w3.org/2004/02/skos/core#hiddenLabel:> "CBC"@nl,
         "capaciteitsbeperkingscontract"@nl ;
     skos:inScheme <> ;
