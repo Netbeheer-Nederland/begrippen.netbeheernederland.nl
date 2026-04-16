@@ -12,3 +12,6 @@ PatternLite
 
 # OS-agnostische task runner
 invoke
+
+# Setup
+pip
