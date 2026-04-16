@@ -165,12 +165,16 @@
     adms:status status:submitted .
 
 :e2ifi a skos:Concept ;
-    dct:source :qyewj ;
+    dct:source :qyewj,
+        :tm373 ;
     skos:altLabel "SJA"@nl ;
     skos:broader :y4yex ;
-    skos:definition "verwachte afname op een aansluiting bij gestandaardiseerde condities en op basis van een genormaliseerd jaar"@nl ;
+    skos:definition "verwachte afname bij gestandaardiseerde condities en op basis van een genormaliseerd jaar"@nl ;
+    skos:hiddenLabel "standaardjaarverbruik"@nl,
+        "SJV"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "standaardjaarafname"@nl ;
+    skos:scopeNote "De regelgeving spreekt van afname op een aansluiting maar in de praktijk betreft dit de afname op een allocatiepunt bij een aansluiting of netgebied."@nl ;
     adms:status status:valid .
 
 :eyp3g a skos:Concept ;
@@ -193,9 +197,10 @@
     dct:source :qyewj ;
     skos:altLabel "SJI"@nl ;
     skos:broader :y4yex ;
-    skos:definition "verwachte invoeding op een aansluiting bij gestandaardiseerde condities en op basis van een genormaliseerd jaar"@nl ;
+    skos:definition "verwachte invoeding bij gestandaardiseerde condities en op basis van een genormaliseerd jaar"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "standaardjaarinvoeding"@nl ;
+    skos:scopeNote "De regelgeving spreekt van invoeding op een aansluiting maar in de praktijk betreft dit de invoeding op een allocatiepunt bij een aansluiting of netgebied."@nl ;
     adms:status status:valid .
 
 :ksh8h a skos:Concept ;
