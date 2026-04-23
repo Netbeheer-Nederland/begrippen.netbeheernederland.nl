@@ -100,6 +100,14 @@
         "Het deel van een transportovereenkomst waarvoor een zogenaamde transportbeperking is opgelegd, geldt als gevraagde transportcapaciteit."@nl ;
     adms:status status:valid .
 
+:bma66 a skos:Concept ;
+    dct:source :qyewj ;
+    skos:broader :dwk8c ;
+    skos:definition "transportcapaciteit die door toepassing van regelmiddelen kan worden benut om overschrijding van de aanwezige transportcapaciteit te voorkomen"@nl ;
+    skos:inScheme <> ;
+    skos:prefLabel "regelbare transportcapaciteit"@nl ;
+    adms:status status:submitted .
+
 :8eytm a skos:Concept ;
     skos:broader :a4ejc ;
     skos:definition "deel van het aardoppervlak waar zich de overdrachtspunten van aansluitingen bevinden die worden gevoed door een bepaald deel van het energienet"@nl ;
