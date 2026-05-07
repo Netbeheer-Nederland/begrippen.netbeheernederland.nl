@@ -84,6 +84,14 @@
 
 ### Einde NBility ###
 
+:m9e2q a skos:Concept ;
+    dct:source :6cpic ;
+    skos:broader :gnhiy ;
+    skos:definition "ieder die van een netbeheerder de beschikking heeft gekregen over een aansluiting"@nl ;
+    skos:inScheme <> ;
+    skos:prefLabel "aangeslotene"@nl ;
+    adms:status status:valid .
+
 :3jypg a skos:Concept ;
     skos:broader :fqqa7 ;
     skos:definition "plek waar zich het overdrachtspunt van een aansluiting of netkoppeling bevindt"@nl ;

@@ -67,14 +67,6 @@
 
 ### Einde NBility ###
 
-:m9e2q a skos:Concept ;
-    dct:source :6cpic ;
-    skos:broader :9gjm2 ;
-    skos:definition "ieder die van een netbeheerder de beschikking heeft gekregen over een aansluiting"@nl ;
-    skos:inScheme <> ;
-    skos:prefLabel "aangeslotene"@nl ;
-    adms:status status:valid .
-
 :9ayny a skos:Concept ;
     dct:source :xsjys ;
     skos:broader :st3fm ;
