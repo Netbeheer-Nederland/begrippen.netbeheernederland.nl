@@ -49,7 +49,7 @@
 
 :a4ejc a skos:Concept ;
     dct:source :2i83j ;
-    skos:definition "taak of doel van een of meer (geplande) netcomponenten op een bepaalde locatie in het energienet"@nl ;
+    skos:definition "afgebakende eenheid van functionaliteit op een bepaalde plaats in het energienet"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "netfunctie"@nl ;
     skos:scopeNote "De netfuncties worden onderscheiden naar primair, secundiar, tertiair en telecom. Primaire netfunctie: een netfunctie voor energietransport. Secundaire netfunctie: een netfunctie voor het meten en/of sturen (inclusief beveiligen) van energietransport. Tertiaire netfunctie: een facilitaire voorziening voor de fysieke bescherming en/of ondersteuning van netcomponenten. Telecomnetfunctie: een onderdeel van een telecommunicatienetwerk bedoeld voor gegevensoverdracht van of naar een netfunctie."@nl ;

@@ -9,12 +9,11 @@
 
 :39t96 a skos:Concept ;
     dct:source :2i83j ;
-    skos:definition "aanbod aan een netbeheerder om het productie- en/of belastingspatroon op een of meer aansluitingen te wijzigen"@nl ;
+    skos:definition "het op verzoek van de netbeheerder aanpassen van energiestromen om het energienet beschikbaar te houden"@nl ;
     skos:inScheme <> ;
-    skos:prefLabel "opregel- of afregelaanbod"@nl ;
-    skos:scopeNote "In NBility 2.3 bekend als 'opregel- of afregelaanbod', maar verandert in NBility 2.4 naar verwachting van naam."@nl ;
+    skos:prefLabel "capaciteitsdienst"@nl ;
     skos:topConceptOf <> ;
-    adms:status status:submitted .
+    adms:status status:valid .
 
 :hc9px a skos:Concept ;
     dct:source :2i83j ;
@@ -68,7 +67,7 @@
 
 :xbzft a skos:Concept ;
     dct:source :2i83j ;
-    skos:definition "verklaring dat uitgewisselde energie een marktpartij toebehoort"@nl ;
+    skos:definition "formele verklaring dat uitgewisselde energie een marktpartij toebehoort"@nl ;
     skos:inScheme <> ;
     skos:prefLabel "energietoerekening"@nl ;
     skos:topConceptOf <> ;

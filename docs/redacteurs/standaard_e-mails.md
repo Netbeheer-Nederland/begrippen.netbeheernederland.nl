@@ -1,11 +1,11 @@
 ---
-title: Standaard e-mails
+title: Standaard-e-mails
 parent: Redacteurs
 ---
 
-# Standaard e-mails
+# Standaard-e-mails
 
-Deze pagina bevat standaard e-mails om data-eigenaren te betrekken bij begripsdefinities.
+Deze pagina bevat standaard-e-mails om data-eigenaren te betrekken bij begripsdefinities.
 
 ## Data-eigenaar informeren (Stedin)
 
