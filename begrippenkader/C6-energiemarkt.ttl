@@ -15,6 +15,15 @@
     skos:topConceptOf <> ;
     adms:status status:valid .
 
+:e8frg a skos:Concept ;
+    dct:source :2i83j ;
+    skos:definition "het tijdelijk beschikbaar stellen van transportcapaciteit voor een aansluiting met een volledig variabel recht op transport"@nl ;
+    skos:inScheme <> ;
+    skos:prefLabel "transportvrijgave"@nl ;
+    skos:scopeNote "De transportdienst wordt vrijgegeven op basis van restcapaciteit in het energienet."@nl ;
+    skos:topConceptOf <> ;
+    adms:status status:valid .
+
 :hc9px a skos:Concept ;
     dct:source :2i83j ;
     skos:definition "partij die een rol vervult binnen de energiemarkt"@nl ;
